@@ -1,0 +1,104 @@
+/* Da Claudia Patisserie · la vetrina di una pasticceria: fondale rosa confetto, panna, il rosso ciliegia del suo marchio.
+   Segno proprio: la torta quasi vera in vetrina, che cambia colore e piani con un tocco (immagini illustrative).
+   Tre pagine: la vetrina, le torte fatte da lei, la richiesta composta per WhatsApp. */
+:root { --fondo: #fff7f5; --carta: #ffffff; --testo: #3b1f24; --tenue: #76565c; --linea: #f1d5d5; --accento: #c9202f; --sopra-accento: #fff; --palco: #efc2c5; --vino: #5a1420;
+  --titoli: 'DM Serif Display', Georgia, serif; --corpo: 'Quicksand', 'Segoe UI', sans-serif; --mano: 'Dancing Script', cursive; --raggio: 999px; --largo: 1240px; }
+html { scrollbar-color: var(--accento) var(--fondo); }
+::selection { background: var(--accento); color: #fff; }
+a { text-underline-offset: .2em; }
+body { font-weight: 500; }
+h1 { font-size: clamp(2.7rem, 6vw, 5.2rem); line-height: 1; }
+h1 em, h2 em { font-style: italic; color: var(--accento); }
+.sopra:empty { display: none; }
+.marchio img { height: 64px; mix-blend-mode: multiply; }
+.bottone { font-weight: 700; }
+.voto .stelle { color: #d49a1f; }
+
+/* il palco: tutta la prima schermata ha il colore del fondale, così la torta sembra appoggiata sulla pagina */
+.pagina-home .testata { background: color-mix(in srgb, var(--palco) 88%, transparent); border-color: transparent; }
+.palco { background: var(--palco); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(10px, 3vw, 50px); align-items: center; padding: clamp(20px, 4vw, 50px) max(var(--bordo), calc((100vw - var(--largo)) / 2 + var(--bordo))) clamp(40px, 6vw, 80px); }
+.palco .grande { color: var(--vino); margin-top: 1.1em; }
+.palco .voto, .palco .aperto, .palco .voto b { color: var(--vino); }
+.palco .bottone:not(.pieno) { border-color: var(--vino); color: var(--vino); }
+.palco .bottone:not(.pieno):hover { background: var(--vino); color: #fff; }
+.palco-torta { display: grid; justify-items: center; }
+.vetrina { position: relative; width: min(100%, 520px); }
+.vetrina img { width: 100%; height: auto; -webkit-mask-image: linear-gradient(to right, transparent, #000 16%, #000 84%, transparent), linear-gradient(to bottom, transparent, #000 12%, #000 86%, transparent); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent, #000 16%, #000 84%, transparent), linear-gradient(to bottom, transparent, #000 12%, #000 86%, transparent); mask-composite: intersect; transition: opacity .35s ease, filter .35s ease, scale .6s cubic-bezier(.16, 1, .3, 1); }
+.vetrina.cambia img { opacity: 0; filter: blur(10px); scale: .97; }
+.vetrina figcaption { text-align: center; font-size: .82rem; color: var(--vino); opacity: .8; margin-top: -18px; }
+.palco-prova { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 14px; margin-top: 14px; }
+.palco-prova p { margin: 0; font: 400 1.5rem var(--mano); color: var(--vino); }
+.scelte.colori span { padding-left: 12px; }
+.scelte.colori i { width: 22px; height: 22px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(59, 31, 36, .25); flex: none; }
+.palco-prova .scelte { gap: 6px; }
+.palco-prova .scelte span { padding: 7px 14px; font-size: .92rem; background: rgba(255, 255, 255, .55); border-color: transparent; }
+.palco-prova .colori span { padding: 5px; font-size: 0; gap: 0; }
+.palco-prova .colori i { width: 30px; height: 30px; }
+.palco-prova .colori input:checked + span { background: #fff; box-shadow: 0 0 0 2px var(--accento); }
+
+/* le torte vere, a ventaglio */
+.testa-riga { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: clamp(26px, 4vw, 50px); }
+.testa-riga h2 { margin: 0; }
+.ventaglio { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(10px, 2vw, 26px); perspective: 1400px; }
+.ventaglio a { display: block; background: #fff; padding: 10px 10px 14px; text-decoration: none; rotate: var(--r); box-shadow: 0 22px 34px -22px rgba(90, 20, 32, .55); transition: rotate .5s cubic-bezier(.16, 1, .3, 1), transform .5s cubic-bezier(.16, 1, .3, 1); }
+.ventaglio a:hover { rotate: 0deg; }
+.ventaglio img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.ventaglio span { display: block; font: 400 1.6rem var(--mano); color: var(--accento); padding-top: 8px; text-align: center; }
+
+/* le specialità: fascia ciliegia */
+.specialita { background: var(--vino); color: #ffe9e6; padding: clamp(60px, 9vw, 120px) var(--bordo); }
+.specialita ::selection { background: #fff; color: var(--vino); }
+.specialita-dentro { max-width: var(--largo); margin: 0 auto; }
+.specialita h2 { max-width: 18ch; }
+.specialita h2 em { color: #ffb3b3; }
+.specialita-lista { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 3vw, 44px) clamp(26px, 5vw, 80px); margin: clamp(26px, 4vw, 50px) 0; }
+.specialita article { display: grid; grid-template-columns: clamp(96px, 14vw, 170px) 1fr; gap: clamp(14px, 2vw, 26px); align-items: center; }
+.specialita figure { border-radius: 50%; overflow: hidden; box-shadow: 0 0 0 6px rgba(255, 233, 230, .14); }
+.specialita img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.specialita h3 { font-size: clamp(1.4rem, 2.4vw, 1.9rem); margin-bottom: .25em; }
+.specialita article p { margin: 0; color: #f0c9c8; }
+.avviso { border: 1px dashed #ffb3b3; border-radius: 16px; padding: 16px 20px; max-width: 70ch; margin: 0; color: #ffe9e6; }
+
+.domande h2 { margin-bottom: .7em; }
+.contatti { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(26px, 5vw, 80px); align-items: start; border-top: 1px solid var(--linea); }
+.orari-riquadro { background: var(--carta); border-radius: 20px; padding: clamp(18px, 3vw, 32px); box-shadow: 0 26px 40px -30px rgba(90, 20, 32, .5); }
+.piede { background: var(--palco); color: var(--vino); border: 0; }
+.piede-su b { color: var(--vino); }
+.piede-giu { border-color: rgba(90, 20, 32, .25); }
+.piede a:hover { color: var(--accento); }
+
+/* pagina delle torte */
+.testata-pagina { padding-bottom: clamp(20px, 3vw, 40px); }
+.testata-pagina .grande { margin-top: 1em; max-width: 56ch; }
+.galleria { max-width: var(--largo); margin: 0 auto; padding: 0 var(--bordo) clamp(50px, 7vw, 100px); columns: 3; column-gap: clamp(12px, 2vw, 26px); }
+.galleria figure { break-inside: avoid; margin-bottom: clamp(12px, 2vw, 26px); background: #fff; padding: 10px 10px 14px; box-shadow: 0 22px 34px -24px rgba(90, 20, 32, .5); }
+.galleria img { width: 100%; object-fit: cover; aspect-ratio: 4 / 5; }
+.galleria .g1 img, .galleria .g2 img { aspect-ratio: 1; }
+.galleria figcaption { padding-top: 10px; color: var(--tenue); font-size: .95rem; }
+.galleria figcaption b { display: block; font: 400 1.7rem / 1.1 var(--mano); color: var(--accento); }
+.invito-finale { background: var(--palco); text-align: center; padding: clamp(50px, 8vw, 110px) var(--bordo); }
+.invito-finale h2 { font-size: clamp(2.4rem, 6vw, 4.6rem); }
+.invito-finale .azioni { justify-content: center; margin-bottom: 0; }
+.invito-finale .bottone:not(.pieno) { border-color: var(--vino); color: var(--vino); }
+
+/* pagina dell'ordine: la torta resta in vista mentre si sceglie */
+.ordina { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(20px, 4vw, 60px); max-width: var(--largo); margin: 0 auto; padding: clamp(20px, 3vw, 40px) var(--bordo) clamp(50px, 7vw, 100px); align-items: start; }
+.ordina-torta { position: sticky; top: 96px; background: var(--palco); border-radius: 260px 260px 24px 24px; padding: 6% 6% 26px; display: grid; justify-items: center; }
+.componi h1 { font-size: clamp(2.4rem, 5vw, 4rem); }
+.componi .grande { margin: .8em 0 1.4em; }
+.componi fieldset { margin-bottom: 22px; }
+.componi .campi { margin: 6px 0 18px; }
+
+@media (max-width: 900px) {
+  .palco, .contatti, .ordina { grid-template-columns: 1fr; }
+  .palco-torta { order: -1; }
+  .vetrina { width: min(68%, 300px); }
+  .palco-prova { margin-top: 4px; }
+  .ventaglio { grid-template-columns: 1fr 1fr; }
+  .specialita-lista { grid-template-columns: 1fr; }
+  .galleria { columns: 2; }
+  .ordina-torta { top: 74px; z-index: 5; border-radius: 0 0 28px 28px; margin: 0 calc(var(--bordo) * -1); padding: 0 0 10px; }
+  .ordina-torta .vetrina { width: min(46%, 210px); }
+  .ordina-torta figcaption { display: none; }
+  .marchio img { height: 54px; }
+}

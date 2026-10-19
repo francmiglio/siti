@@ -1,0 +1,21 @@
+{
+  "name": "Esteticamente Sara - Centro estetico a Voghera",
+  "short_name": "Estetica Sara",
+  "lang": "it",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f1ea",
+  "theme_color": "#f7f1ea",
+  "icons": [
+    {
+      "src": "assets/img/icona-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/icona-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

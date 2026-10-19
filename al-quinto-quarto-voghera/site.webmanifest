@@ -1,0 +1,21 @@
+{
+  "name": "Al Quinto Quarto",
+  "short_name": "Al Quinto Quarto",
+  "lang": "it",
+  "start_url": "./index.html",
+  "display": "browser",
+  "background_color": "#17110e",
+  "theme_color": "#17110e",
+  "icons": [
+    {
+      "src": "assets/img/icona-180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/icona-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

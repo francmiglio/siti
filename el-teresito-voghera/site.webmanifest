@@ -1,0 +1,21 @@
+{
+  "name": "El Teresito",
+  "short_name": "El Teresito",
+  "lang": "it",
+  "start_url": "./index.html",
+  "display": "browser",
+  "background_color": "#eef0ee",
+  "theme_color": "#eef0ee",
+  "icons": [
+    {
+      "src": "assets/img/icona-180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/icona-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

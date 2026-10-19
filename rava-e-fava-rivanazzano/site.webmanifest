@@ -1,0 +1,21 @@
+{
+  "name": "La Rava e la Fava",
+  "short_name": "La Rava e la Fava",
+  "lang": "it",
+  "start_url": "./index.html",
+  "display": "browser",
+  "background_color": "#fbf8e6",
+  "theme_color": "#fbf8e6",
+  "icons": [
+    {
+      "src": "assets/img/icona-180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/icona-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

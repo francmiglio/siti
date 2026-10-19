@@ -1,0 +1,21 @@
+{
+  "name": "Agriturismo La Scortia",
+  "short_name": "Agriturismo La Scortia",
+  "lang": "it",
+  "start_url": "./index.html",
+  "display": "browser",
+  "background_color": "#f3e4cf",
+  "theme_color": "#f3e4cf",
+  "icons": [
+    {
+      "src": "assets/img/icona-180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/icona-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

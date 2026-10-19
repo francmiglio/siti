@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://materaxissimi.it/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <priority>1.0</priority>
+    <image:image><image:loc>https://materaxissimi.it/assets/img/letto-verde-1440.webp</image:loc></image:image>
+    <image:image><image:loc>https://materaxissimi.it/assets/img/letto-contenitore-1440.webp</image:loc></image:image>
+    <image:image><image:loc>https://materaxissimi.it/assets/img/showroom-poltrone-1440.webp</image:loc></image:image>
+    <image:image><image:loc>https://materaxissimi.it/assets/img/campionario-tessuti-1440.webp</image:loc></image:image>
+    <image:image><image:loc>https://materaxissimi.it/assets/img/materassi-singoli-1440.webp</image:loc></image:image>
+    <image:image><image:loc>https://materaxissimi.it/assets/img/vetrina-1440.webp</image:loc></image:image>
+    <video:video><video:thumbnail_loc>https://materaxissimi.it/assets/video/strati-poster.webp</video:thumbnail_loc><video:title>Dentro un materasso Materaxissimi, strato dopo strato</video:title><video:description>Ripresa illustrativa: un nostro materasso si apre e mostra gli strati interni.</video:description><video:content_loc>https://materaxissimi.it/assets/video/strati-1280.mp4</video:content_loc><video:family_friendly>yes</video:family_friendly></video:video>
+  </url>
+  <url>
+    <loc>https://materaxissimi.it/materassi.html</loc>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://materaxissimi.it/assets/img/letto-tortora-1440.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://materaxissimi.it/materassi-su-misura-voghera.html</loc>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://materaxissimi.it/assets/img/tessuto-trapuntato-1440.webp</image:loc></image:image>
+    <image:image><image:loc>https://materaxissimi.it/assets/img/dettaglio-bottone-1440.webp</image:loc></image:image>
+    <image:image><image:loc>https://materaxissimi.it/assets/img/bordo-tessuto-1440.webp</image:loc></image:image>
+    <image:image><image:loc>https://materaxissimi.it/assets/img/bordo-materasso-blu-1440.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://materaxissimi.it/letti-reti-guanciali-poltrone.html</loc>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://materaxissimi.it/assets/img/letto-verde-1440.webp</image:loc></image:image>
+    <image:image><image:loc>https://materaxissimi.it/assets/img/letto-contenitore-1440.webp</image:loc></image:image>
+    <image:image><image:loc>https://materaxissimi.it/assets/img/campionario-tessuti-1440.webp</image:loc></image:image>
+    <image:image><image:loc>https://materaxissimi.it/assets/img/showroom-poltrone-1440.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://materaxissimi.it/consulenza-materasso-a-domicilio.html</loc>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://materaxissimi.it/assets/img/materassi-singoli-1440.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://materaxissimi.it/chi-siamo.html</loc>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://materaxissimi.it/assets/img/showroom-ingresso-1440.webp</image:loc></image:image>
+    <image:image><image:loc>https://materaxissimi.it/assets/img/vetrina-1440.webp</image:loc></image:image>
+    <image:image><image:loc>https://materaxissimi.it/assets/img/showroom-panoramica-1440.webp</image:loc></image:image>
+    <image:image><image:loc>https://materaxissimi.it/assets/img/letto-rosso-topper-1440.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://materaxissimi.it/contatti.html</loc>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.8</priority>
+
+  </url>
+  <url>
+    <loc>https://materaxissimi.it/privacy-policy.html</loc>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.3</priority>
+
+  </url>
+  <url>
+    <loc>https://materaxissimi.it/cookie-policy.html</loc>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.3</priority>
+
+  </url>
+</urlset>

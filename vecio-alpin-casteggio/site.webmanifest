@@ -1,0 +1,21 @@
+{
+  "name": "Osteria del Vecio Alpin",
+  "short_name": "Osteria del Vecio Alpin",
+  "lang": "it",
+  "start_url": "./index.html",
+  "display": "browser",
+  "background_color": "#efe7cf",
+  "theme_color": "#efe7cf",
+  "icons": [
+    {
+      "src": "assets/img/icona-180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/icona-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

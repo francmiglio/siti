@@ -1,0 +1,186 @@
+/* Soleluna · nero e oro del marchio. Due aspetti: "sole" (pranzo, carta chiara) e "luna" (cena, notte).
+   Il passaggio è tutto in queste variabili: html[data-momento] le cambia e i colori sfumano da soli. */
+@property --fondo { syntax: '<color>'; inherits: true; initial-value: #0d0c0a; }
+@property --carta { syntax: '<color>'; inherits: true; initial-value: #171512; }
+@property --testo { syntax: '<color>'; inherits: true; initial-value: #f3ecdc; }
+@property --tenue { syntax: '<color>'; inherits: true; initial-value: #b3a892; }
+@property --linea { syntax: '<color>'; inherits: true; initial-value: #2e2a22; }
+@property --oro { syntax: '<color>'; inherits: true; initial-value: #c9a44c; }
+@property --sopra-oro { syntax: '<color>'; inherits: true; initial-value: #14110a; }
+
+*, *::before, *::after { box-sizing: border-box; }
+:root { --fondo: #0d0c0a; --carta: #171512; --testo: #f3ecdc; --tenue: #b3a892; --linea: #2e2a22; --oro: #c9a44c; --sopra-oro: #14110a; --largo: 1240px; --bordo: clamp(18px, 4.5vw, 56px);
+  --titoli: 'Marcellus', 'Palatino Linotype', Georgia, serif; --corpo: 'Jost', 'Segoe UI', system-ui, sans-serif;
+  transition: --fondo .9s ease, --carta .9s ease, --testo .9s ease, --tenue .9s ease, --linea .9s ease, --oro .9s ease, --sopra-oro .9s ease; }
+:root[data-momento="sole"] { --fondo: #f6f0e2; --carta: #fffaf0; --testo: #1b1710; --tenue: #6a5f4b; --linea: #e0d5bd; --oro: #8f6a12; --sopra-oro: #fffaf0; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 84px; }
+body { margin: 0; background: var(--fondo); color: var(--testo); font: 400 1.0625rem/1.6 var(--corpo); overflow-x: clip; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--oro); outline-offset: 4px; }
+h1, h2, h3 { font-family: var(--titoli); font-weight: 400; line-height: 1.04; margin: 0; text-wrap: balance; letter-spacing: .005em; }
+h1 { font-size: clamp(2.7rem, 6.2vw, 5.4rem); }
+h2 { font-size: clamp(2rem, 4.2vw, 3.5rem); margin-bottom: .45em; }
+h3 { font-size: 1.3rem; }
+p { margin: 0 0 1em; text-wrap: pretty; }
+.grande { font-size: clamp(1.1rem, 1.5vw, 1.3rem); line-height: 1.55; color: var(--tenue); max-width: 46ch; }
+.sopra { font-size: .78rem; letter-spacing: .26em; text-transform: uppercase; color: var(--oro); margin-bottom: 1.4em; }
+.nota { font-size: .9rem; color: var(--tenue); }
+
+.salta { position: absolute; left: -999px; top: 8px; background: var(--oro); color: var(--sopra-oro); padding: 10px 16px; z-index: 100; }
+.salta:focus { left: 8px; }
+.demo { margin: 0; padding: 5px 16px; text-align: center; font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; background: var(--oro); color: var(--sopra-oro); }
+
+.testata { position: sticky; top: 0; z-index: 40; display: flex; align-items: center; gap: 28px; padding: 12px var(--bordo); background: color-mix(in srgb, var(--fondo) 86%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--linea); }
+.marchio { display: flex; align-items: center; gap: 12px; text-decoration: none; margin-right: auto; font-family: var(--titoli); font-size: 1.35rem; letter-spacing: .14em; text-transform: uppercase; }
+.marchio img { width: 44px; height: auto; border-radius: 3px; }
+.voci { display: flex; gap: 26px; font-size: .92rem; letter-spacing: .06em; }
+.voci a { text-decoration: none; padding: 6px 0; background: linear-gradient(var(--oro), var(--oro)) 0 100% / 0 1px no-repeat; transition: background-size .35s ease; }
+.voci a:hover { background-size: 100% 1px; }
+@media (max-width: 900px) { .voci { display: none; } }
+
+.bottone { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 11px 22px; border: 1px solid var(--oro); color: var(--testo); text-decoration: none; font-weight: 500; letter-spacing: .04em; border-radius: 2px; transition: background-color .3s ease, color .3s ease, transform .3s ease; }
+.bottone:hover { background: var(--oro); color: var(--sopra-oro); }
+.bottone.pieno { background: var(--oro); color: var(--sopra-oro); }
+.bottone.pieno:hover { transform: translateY(-2px); }
+.bottone.compatto { min-height: 40px; padding: 7px 18px; }
+.bottone svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.azioni { display: flex; flex-wrap: wrap; gap: 12px; margin: 1.8em 0 1.2em; }
+.aperto { font-size: .92rem; color: var(--tenue); display: flex; align-items: center; gap: 9px; min-height: 1.5em; }
+.aperto::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--tenue); }
+.aperto.si::before { background: #4cc38a; box-shadow: 0 0 0 4px color-mix(in srgb, #4cc38a 25%, transparent); }
+.aperto:empty { display: none; }
+
+/* ---------- apertura ---------- */
+.apertura { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(24px, 4vw, 70px); align-items: center; max-width: var(--largo); margin: 0 auto; padding: clamp(36px, 6vw, 86px) var(--bordo) clamp(40px, 5vw, 70px); }
+.apertura h1 .riga { display: block; transition: color .9s ease, opacity .9s ease; }
+:root[data-momento="sole"] .luna-riga, :root[data-momento="luna"] .sole-riga { color: var(--tenue); opacity: .45; }
+:root[data-momento="sole"] .sole-riga, :root[data-momento="luna"] .luna-riga { color: var(--oro); }
+.apertura .grande { margin-top: 1.5em; }
+.apertura-astro { position: relative; aspect-ratio: 1; perspective: 1100px; }
+.astro { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.astro .alone { fill: var(--oro); opacity: .14; transition: opacity .9s ease, transform .9s ease; transform-box: fill-box; transform-origin: center; }
+.astro .raggi { fill: var(--oro); transform-origin: 0 0; animation: gira 90s linear infinite; transition: opacity .9s ease; }
+.astro .stelle circle { fill: var(--testo); opacity: 0; transition: opacity .9s ease; }
+:root[data-momento="luna"] .astro .raggi { opacity: 0; }
+:root[data-momento="luna"] .astro .alone { opacity: .08; transform: scale(.9); }
+:root[data-momento="luna"] .astro .stelle circle { opacity: .85; animation: brilla 4s ease-in-out infinite; animation-delay: calc(var(--k) * -.37s); }
+@keyframes gira { to { transform: rotate(360deg); } }
+@keyframes brilla { 50% { opacity: .25; } }
+/* la fotografia della sala dentro il disco: di giorno è il sole pieno, di sera un'ombra la copre e resta la falce di luna */
+.apertura-foto { position: absolute; inset: 15%; border-radius: 50%; overflow: hidden; box-shadow: 0 0 0 2px var(--oro), 0 30px 70px -24px rgba(0, 0, 0, .65); }
+.apertura-foto img { width: 100%; height: 100%; object-fit: cover; }
+.eclissi { position: absolute; inset: -2%; border-radius: 50%; background: var(--fondo); translate: 104% -104%; transition: translate 1.3s cubic-bezier(.5, 0, .2, 1), background-color .9s ease; }
+:root[data-momento="luna"] .eclissi { translate: 30% -24%; }
+
+.momenti { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: clamp(10px, 2vw, 30px); }
+.momento { display: flex; gap: 18px; align-items: flex-start; text-align: left; font: inherit; color: inherit; background: var(--carta); border: 1px solid var(--linea); border-radius: 3px; padding: 20px 22px; cursor: pointer; transition: border-color .4s ease, transform .4s ease; }
+.momento:hover { transform: translateY(-3px); }
+.momento[aria-pressed="true"] { border-color: var(--oro); }
+.momento-segno, .segno { flex: none; width: 34px; height: 34px; border-radius: 50%; background: var(--oro); position: relative; overflow: hidden; }
+.momento-segno { margin-top: 3px; opacity: .35; transition: opacity .4s ease; }
+.momento[aria-pressed="true"] .momento-segno { opacity: 1; }
+.momento[data-scegli="luna"] .momento-segno::after, .luna-segno::after, .meta-segno::after { content: ''; position: absolute; inset: 0; border-radius: 50%; background: var(--carta); translate: 32% -22%; }
+.momento-testo { display: grid; gap: 3px; }
+.momento-testo b { font-family: var(--titoli); font-weight: 400; font-size: 1.5rem; }
+.momento-testo span { color: var(--tenue); font-size: .95rem; }
+.momento-di { max-width: 44ch; }
+
+/* ---------- sezioni ---------- */
+.sezione { max-width: var(--largo); margin: 0 auto; padding: clamp(60px, 9vw, 130px) var(--bordo); border-top: 1px solid var(--linea); }
+.colonna { min-width: 0; }
+figure { margin: 0; }
+.inclina { transform-style: preserve-3d; transition: transform .5s cubic-bezier(.2, .8, .2, 1); }
+.inclina img { border-radius: 2px; }
+
+.pizzeria { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 80px); align-items: center; }
+.punti { list-style: none; padding: 0; margin: 2.2em 0 0; display: grid; gap: 0; }
+.punti li { display: grid; grid-template-columns: minmax(120px, 34%) 1fr; gap: 16px; align-items: baseline; padding: 14px 0; border-top: 1px solid var(--linea); }
+.punti b { font-family: var(--titoli); font-weight: 400; font-size: 1.6rem; color: var(--oro); }
+.punti span { color: var(--tenue); }
+.mosaico { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; perspective: 1200px; }
+.mosaico .alta { grid-column: 1 / -1; }
+.mosaico img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.mosaico .alta img { aspect-ratio: 16 / 9; }
+
+.cucina { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(28px, 5vw, 80px); align-items: start; perspective: 1200px; }
+.cucina-foto { position: sticky; top: 110px; }
+.cucina-foto img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.carta { display: grid; grid-template-columns: 1fr 1fr; gap: 26px 40px; margin: 2.2em 0 1.4em; }
+.carta h3 { color: var(--oro); font-size: .86rem; letter-spacing: .2em; text-transform: uppercase; font-family: var(--corpo); font-weight: 500; margin-bottom: .7em; }
+.carta ul { list-style: none; margin: 0; padding: 0; }
+.carta li { padding: 8px 0; border-top: 1px solid var(--linea); font-family: var(--titoli); font-size: 1.12rem; line-height: 1.3; }
+
+.sale-testa { max-width: 60ch; margin-bottom: clamp(26px, 4vw, 54px); }
+.galleria { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; perspective: 1400px; }
+.galleria figure { grid-column: span 2; position: relative; }
+.galleria .larga { grid-column: span 4; grid-row: span 2; }
+.galleria figure:nth-child(n+4) { grid-column: span 3; }
+.galleria figure:nth-child(n+4) img { aspect-ratio: 2 / 1; }
+.galleria img { width: 100%; height: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.galleria figcaption { position: absolute; left: 12px; bottom: 10px; font-size: .74rem; letter-spacing: .2em; text-transform: uppercase; color: #f3ecdc; text-shadow: 0 1px 8px rgba(0, 0, 0, .8); }
+
+.tre { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: clamp(30px, 4vw, 56px); }
+.tre article { padding: 10px clamp(18px, 2.4vw, 38px) 6px; border-left: 1px solid var(--linea); }
+.tre article:first-child { border-left: 0; padding-left: 0; }
+.tre .segno { display: block; margin-bottom: 22px; }
+.tre .meta-segno::after { translate: 50% 0; }
+.tre h3 { margin-bottom: .5em; font-size: 1.5rem; }
+.tre p { color: var(--tenue); margin: 0; }
+
+.contatti { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(28px, 5vw, 80px); align-items: start; }
+.telefono { font-family: var(--titoli); font-size: clamp(2.4rem, 6vw, 4.6rem); color: var(--oro); text-decoration: none; line-height: 1; display: inline-block; margin: .15em 0 .3em; }
+.indirizzo { color: var(--tenue); margin-top: 1.2em; }
+.orari-riquadro { background: var(--carta); border: 1px solid var(--linea); padding: clamp(20px, 3vw, 36px); border-radius: 3px; }
+.orari { width: 100%; border-collapse: collapse; }
+.orari caption { text-align: left; font-family: var(--titoli); font-size: 1.6rem; padding-bottom: 14px; }
+.orari th, .orari td { text-align: left; padding: 10px 0; border-top: 1px solid var(--linea); font-weight: 400; }
+.orari td { text-align: right; color: var(--tenue); font-variant-numeric: tabular-nums; }
+.orari tr.oggi th { color: var(--oro); }
+.orari tr.oggi td { color: var(--testo); }
+.orari-riquadro .nota { margin: 14px 0 0; }
+
+/* ---------- pagine di testo, piede ---------- */
+.testo { max-width: 72ch; margin: 0 auto; padding: clamp(40px, 7vw, 90px) var(--bordo); }
+.testo h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); margin-bottom: .5em; }
+.testo h2 { margin-top: 1.7em; font-size: 1.6rem; }
+.testo h3 { margin-top: 1.4em; font-size: 1.15rem; font-family: var(--corpo); font-weight: 600; }
+.testo a { color: var(--oro); }
+.testo .aggiornata { color: var(--tenue); font-size: .9rem; margin-top: 2.5em; }
+.piede { border-top: 1px solid var(--linea); padding: 46px var(--bordo) 40px; font-size: .93rem; color: var(--tenue); }
+.piede-su { display: flex; flex-wrap: wrap; gap: 28px 70px; max-width: var(--largo); margin: 0 auto 30px; }
+.piede-su b { font-family: var(--titoli); font-weight: 400; font-size: 1.4rem; color: var(--testo); letter-spacing: .12em; text-transform: uppercase; }
+.piede nav { display: grid; gap: 7px; align-content: start; }
+.piede a { text-decoration: none; }
+.piede a:hover { color: var(--oro); }
+.piede-giu { max-width: var(--largo); margin: 0 auto; display: flex; flex-wrap: wrap; gap: 6px 26px; padding-top: 22px; border-top: 1px solid var(--linea); font-size: .85rem; }
+.piede-giu p { margin: 0; }
+.piede .lwa { margin-left: auto; }
+.barra-fissa { display: none; }
+
+/* ingressi leggeri: partono solo per ciò che sta sotto la prima schermata */
+@media (prefers-reduced-motion: no-preference) {
+  .entra { opacity: 0; transform: translateY(26px); transition: opacity .9s ease, transform .9s cubic-bezier(.2, .8, .2, 1); }
+  .entra.visto { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition-duration: .01s !important; } }
+
+@media (max-width: 900px) {
+  .apertura, .pizzeria, .cucina, .contatti { grid-template-columns: 1fr; }
+  .apertura-astro { max-width: 420px; width: 86%; margin: 0 auto; order: -1; }
+  .momenti { grid-template-columns: 1fr; }
+  .cucina-foto { position: static; }
+  .cucina-foto img { aspect-ratio: 3 / 2; }
+  .galleria { grid-template-columns: repeat(2, 1fr); }
+  .galleria figure, .galleria .larga, .galleria figure:nth-child(n+4) { grid-column: span 1; grid-row: auto; }
+  .galleria figure:nth-child(n+4) img { aspect-ratio: 3 / 2; }
+  .galleria .larga, .galleria figure:nth-child(2), .galleria figure:last-child { grid-column: 1 / -1; }
+  .tre { grid-template-columns: 1fr; }
+  .tre article { border-left: 0; border-top: 1px solid var(--linea); padding: 26px 0; }
+  .tre article:first-child { border-top: 0; }
+  .carta { grid-template-columns: 1fr; }
+  .piede { padding-bottom: 96px; }
+  .barra-fissa { display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); background: color-mix(in srgb, var(--fondo) 92%, transparent); backdrop-filter: blur(10px); border-top: 1px solid var(--linea); }
+  .barra-fissa .bottone { width: 100%; justify-content: center; }
+  .testata .bottone { display: none; }
+}

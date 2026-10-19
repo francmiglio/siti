@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /strumenti/
+Disallow: /sorgenti/
+
+Sitemap: https://www.spazioemme.it/sitemap.xml

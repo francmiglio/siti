@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /assets/seq/
+
+Sitemap: https://www.amarcordvoghera.it/sitemap.xml

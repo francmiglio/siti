@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="it" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Garage Rombo · gestionale – sito dimostrativo di Local Web Agency</title>
+  <meta name="description" content="Sito dimostrativo (attività inventata) realizzato da Local Web Agency: esempio di gestionale su misura per officina auto.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#161a23">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/esempi-sito.css?v=mur35vot">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="assets/js/dist/esempi.js?v=mur35vot" defer></script>
+</head>
+<body class="demo demo--gestionale">
+  <div class="demo-barra" role="note">
+    <a class="demo-barra__torna" href="esempi.html" aria-label="Torna agli esempi di Local Web Agency">←</a>
+    <p><strong>Sito dimostrativo</strong> · <span class="demo-barra__lungo">Garage Rombo · gestionale è un’attività inventata: questo sito l’abbiamo creato noi per mostrarti un gestionale su misura.</span><span class="demo-barra__corto">attività inventata</span></p>
+    <a class="demo-barra__cta" href="consulenza.html#modulo">Ne voglio uno così</a>
+  </div>
+<div class="gest" data-gestionale>
+    <nav class="gest__lato" role="tablist" aria-label="Sezioni del gestionale">
+      <div class="gest__logo"><i>R</i>Garage Rombo</div>
+      <button type="button" role="tab" aria-selected="true" data-vista="cruscotto">▦ Cruscotto</button>
+      <button type="button" role="tab" aria-selected="false" data-vista="schede">🔧 Schede di lavoro <b data-conta-aperte>0</b></button>
+      <button type="button" role="tab" aria-selected="false" data-vista="agenda">📅 Agenda</button>
+      <button type="button" role="tab" aria-selected="false" data-vista="magazzino">📦 Magazzino <b data-conta-basse>0</b></button>
+      <button type="button" role="tab" aria-selected="false" data-vista="clienti">👤 Clienti</button>
+      <div class="gest__utente"><i>GR</i><div>Accettazione<br><small style="color:#7c859a">turno mattina</small></div></div>
+    </nav>
+    <main class="gest__corpo">
+      <div class="gest__barra">
+        <h1 data-titolo-vista>Cruscotto</h1>
+        <label class="vh" for="gest-cerca">Cerca</label>
+        <input class="gest__cerca" id="gest-cerca" type="search" placeholder="Cerca targa, cliente, ricambio…" data-cerca>
+        <button class="gest__nuovo" type="button" data-nuova-scheda>+ Nuova scheda</button>
+      </div>
+
+      <section class="gest-vista attiva" data-pannello="cruscotto">
+        <div class="kpi">
+          <div><small>Auto in officina</small><b data-kpi-officina>0</b><em>oggi</em></div>
+          <div><small>Pronte da consegnare</small><b data-kpi-pronte>0</b><em>avvisa i clienti</em></div>
+          <div><small>Incasso settimana</small><b>€ 6.840</b><em>▲ 12% sulla scorsa</em></div>
+          <div><small>Appuntamenti domani</small><b>7</b><em>2 tagliandi, 3 gomme</em></div>
+        </div>
+        <div class="gest-due">
+          <div class="gest-scheda">
+            <h2>Incassi degli ultimi 7 giorni <small style="font-weight:400;color:#6a7282">€</small></h2>
+            <div class="gest-grafico">
+              <div><i style="--h:42%;--n:0"></i>lun</div><div><i style="--h:68%;--n:1"></i>mar</div><div><i style="--h:55%;--n:2"></i>mer</div>
+              <div><i style="--h:80%;--n:3"></i>gio</div><div><i style="--h:94%;--n:4"></i>ven</div><div><i style="--h:60%;--n:5"></i>sab</div><div><i style="--h:6%;--n:6"></i>dom</div>
+            </div>
+          </div>
+          <div class="gest-scheda">
+            <h2>In officina adesso</h2>
+            <table class="gest-tabella"><tbody data-lista-breve></tbody></table>
+          </div>
+        </div>
+      </section>
+
+      <section class="gest-vista" data-pannello="schede">
+        <div class="gest-filtri" data-filtri>
+          <button type="button" aria-pressed="true" data-filtro="tutte">Tutte</button>
+          <button type="button" aria-pressed="false" data-filtro="attesa">In attesa</button>
+          <button type="button" aria-pressed="false" data-filtro="lavoro">In lavorazione</button>
+          <button type="button" aria-pressed="false" data-filtro="pronta">Pronte</button>
+          <button type="button" aria-pressed="false" data-filtro="consegnata">Consegnate</button>
+        </div>
+        <div class="gest-scheda" style="padding:6px 8px;overflow-x:auto">
+          <table class="gest-tabella">
+            <thead><tr><th>N.</th><th>Targa</th><th>Veicolo</th><th class="nascondi-mobile">Cliente</th><th class="nascondi-mobile">Lavoro</th><th>Stato</th></tr></thead>
+            <tbody data-schede></tbody>
+          </table>
+        </div>
+        <p class="gest-nota">Suggerimento: clicca una riga per far avanzare lo stato del lavoro (in attesa → in lavorazione → pronta → consegnata).</p>
+      </section>
+
+      <section class="gest-vista" data-pannello="agenda">
+        <div class="agenda" data-agenda></div>
+      </section>
+
+      <section class="gest-vista" data-pannello="magazzino">
+        <ul class="magazzino" data-magazzino></ul>
+      </section>
+
+      <section class="gest-vista" data-pannello="clienti">
+        <div class="gest-scheda" style="padding:6px 8px;overflow-x:auto">
+          <table class="gest-tabella">
+            <thead><tr><th>Cliente</th><th>Telefono</th><th class="nascondi-mobile">Veicoli</th><th>Ultima visita</th></tr></thead>
+            <tbody data-clienti></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <div class="demo-avviso" id="demo-avviso" role="status" hidden></div>
+  <script type="application/json" id="config">{"versione":"mur35vot","esempio":"gestionale"}</script>
+</body>
+</html>

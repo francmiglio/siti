@@ -1,0 +1,137 @@
+/* Al Quinto Quarto · la sala di sera: bruno quasi nero, la carta paglia delle tovagliette, il rosso mattone del toro.
+   Segno proprio: la tovaglietta appoggiata sul tavolo in 3D, con il toro del loro marchio che esce in rilievo dalla carta
+   (sagoma ricavata dalla fotografia della tovaglietta vera). Il menu è stampato sulla stessa carta. */
+:root { --fondo: #17110e; --carta: #211814; --testo: #f0e2c8; --tenue: #bba98c; --linea: #3b2d25; --accento: #d5593f; --sopra-accento: #17110e;
+  --paglia: #cfa565; --paglia-chiara: #dcb87c; --mattone: #8f2f20; --inchiostro: #2b1710;
+  --titoli: 'Gloock', 'Bodoni MT', Georgia, serif; --corpo: 'Hanken Grotesk', 'Segoe UI', sans-serif; --raggio: 2px; --largo: 1240px; }
+html { scrollbar-color: var(--mattone) var(--fondo); }
+::selection { background: var(--accento); color: var(--fondo); }
+:focus-visible { outline-color: var(--paglia); }
+a { text-underline-offset: .2em; }
+h1 { font-size: clamp(3rem, 7vw, 6rem); letter-spacing: -.015em; }
+h1 em, h2 em { font-style: normal; color: var(--accento); }
+.grande { max-width: 50ch; }
+.sopra:empty { display: none; }
+.demo { background: var(--paglia); color: var(--inchiostro); }
+.testata { background: color-mix(in srgb, var(--fondo) 90%, transparent); }
+.marchio { gap: 14px; }
+.marchio .marchio-toro { width: 64px; height: auto; }
+.marchio-nome { display: grid; gap: 5px; font-size: 1.5rem; }
+.marchio-nome small { font: 500 .62rem var(--corpo); letter-spacing: .2em; text-transform: uppercase; color: var(--tenue); }
+.bottone { font-weight: 500; }
+.bottone.pieno { font-weight: 700; }
+.voto .stelle { color: var(--paglia); }
+
+/* apertura: testo a sinistra, la tovaglietta sul tavolo a destra */
+.apertura { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(20px, 4vw, 70px); align-items: center; max-width: var(--largo); margin: 0 auto; padding: clamp(36px, 6vw, 84px) var(--bordo) clamp(60px, 8vw, 120px); }
+.apertura .grande { margin-top: 1.2em; }
+.tavolo { perspective: 1300px; perspective-origin: 50% 20%; }
+.tovaglietta { position: relative; aspect-ratio: 5 / 4; transform-style: preserve-3d; transform: rotateX(calc(24deg + var(--su, 0deg))) rotateZ(calc(-7deg + var(--gira, 0deg))) rotateY(var(--lato, 0deg)); transition: transform .9s cubic-bezier(.16, 1, .3, 1);
+  background:
+    repeating-linear-gradient(92deg, rgba(120, 80, 30, .07) 0 1px, transparent 1px 5px),
+    repeating-linear-gradient(3deg, rgba(255, 240, 200, .06) 0 2px, transparent 2px 9px),
+    radial-gradient(120% 90% at 30% 20%, var(--paglia-chiara), var(--paglia) 60%, #b98d4f);
+  box-shadow: 0 60px 70px -30px rgba(0, 0, 0, .85), 0 2px 0 rgba(255, 235, 190, .25) inset; }
+.tovaglietta-scritta { position: absolute; top: 6%; left: 0; right: 0; margin: 0; text-align: center; font: 400 clamp(1.3rem, 2.6vw, 2.3rem) var(--titoli); color: var(--mattone); transform: translateZ(1px); }
+.toro { position: absolute; inset: 20% 9% 7%; transform-style: preserve-3d; }
+.toro img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; filter: brightness(calc(.34 + var(--n) * .03)) saturate(1.1); transform: translateZ(calc(var(--n) * var(--passo, 2px) + 1px)); }
+.toro img:first-child { filter: brightness(.12) blur(9px); opacity: .6; transform: translate(14px, 20px) translateZ(0); }
+.toro img:last-child { filter: brightness(.8) saturate(1.15); }
+
+/* in tavola: fotografie di formati diversi, appoggiate come piatti */
+.tavola-testa { max-width: 62ch; margin-bottom: clamp(26px, 4vw, 54px); }
+.tavola-foto { display: grid; grid-template-columns: 1.05fr 1.2fr .9fr; grid-template-rows: auto auto; gap: clamp(12px, 1.6vw, 22px); perspective: 1500px; }
+.tavola-foto figure { position: relative; overflow: hidden; border-radius: 3px; background: var(--carta); }
+.tavola-foto img { width: 100%; height: 100%; object-fit: cover; }
+.tavola-foto figcaption { position: absolute; left: 0; bottom: 0; padding: 26px 16px 12px; width: 100%; font: 400 1.25rem var(--titoli); color: #fff3dc; background: linear-gradient(transparent, rgba(15, 9, 6, .82)); }
+.tavola-foto .a { grid-row: 1 / 3; }
+.tavola-foto .c { grid-row: 1 / 3; grid-column: 3; }
+.tavola-foto .b { grid-column: 2; }
+.tavola-foto .d { grid-column: 2; }
+.tavola-foto .e { display: none; }
+
+/* il menu, stampato sulla carta paglia */
+.carta { color: var(--inchiostro); padding: clamp(60px, 8vw, 116px) var(--bordo);
+  background:
+    repeating-linear-gradient(92deg, rgba(120, 80, 30, .06) 0 1px, transparent 1px 5px),
+    repeating-linear-gradient(3deg, rgba(255, 240, 200, .05) 0 2px, transparent 2px 9px),
+    var(--paglia); }
+.carta ::selection { background: var(--mattone); color: var(--paglia-chiara); }
+.carta :focus-visible { outline-color: var(--mattone); }
+.carta-dentro { max-width: var(--largo); margin: 0 auto; }
+.carta h2 em { color: var(--mattone); }
+.carta-testa p { max-width: 62ch; color: #4a2c1c; }
+.portate { display: flex; flex-wrap: wrap; gap: 6px 26px; margin: 26px 0 0; border-bottom: 2px solid var(--mattone); }
+.portate button { font: 400 clamp(1.3rem, 2.3vw, 1.8rem) var(--titoli); color: #6b4126; background: none; border: 0; padding: 8px 2px 12px; cursor: pointer; position: relative; transition: color .3s; }
+.portate button::after { content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 6px; background: var(--mattone); transform: scaleX(0); transform-origin: 0 50%; transition: transform .5s cubic-bezier(.16, 1, .3, 1); }
+.portate button:hover { color: var(--inchiostro); }
+.portate button[aria-selected="true"] { color: var(--mattone); }
+.portate button[aria-selected="true"]::after { transform: scaleX(1); }
+.carta-corpo { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(26px, 5vw, 80px); align-items: start; margin-top: 20px; }
+.portata-nota { font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--mattone); margin: 14px 0 0; }
+.piatti { list-style: none; margin: 0; padding: 0; }
+.piatti li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid rgba(143, 47, 32, .32); }
+.piatti button, .piatti li > div { display: grid; gap: 2px; text-align: left; font: inherit; color: inherit; background: none; border: 0; padding: 0; }
+.piatti button { cursor: pointer; }
+.piatto-nome { font: 400 clamp(1.25rem, 2vw, 1.55rem) / 1.15 var(--titoli); transition: color .25s; }
+.piatto-come { color: #4a2c1c; }
+.piatto-allergeni { font-size: .82rem; color: #644128; }
+.piatto-vedi { font-size: .82rem; font-weight: 700; color: var(--mattone); text-decoration: underline; text-underline-offset: .25em; margin-top: 3px; }
+.piatti button:hover .piatto-nome, .piatti button[aria-pressed="true"] .piatto-nome { color: var(--mattone); }
+.piatto-prezzo { font: 400 1.35rem var(--titoli); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.carta-foto { position: sticky; top: 110px; rotate: 2.5deg; background: #fbf3e2; padding: 12px 12px 14px; box-shadow: 0 30px 44px -22px rgba(43, 23, 16, .75); }
+.carta-foto img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; transition: opacity .35s ease, filter .35s ease; }
+.carta-foto.cambia img { opacity: 0; filter: blur(8px); }
+.carta-foto figcaption { font: 400 1.2rem var(--titoli); padding-top: 10px; color: var(--inchiostro); }
+
+/* la cantina */
+.cantina { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(26px, 5vw, 80px); align-items: center; }
+.cantina-foto { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; perspective: 1400px; }
+.cantina-foto figure:nth-child(2) { translate: 0 34px; }
+.cantina-foto img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 3px; }
+
+.domande { border-top: 1px solid var(--linea); }
+.domande h2 { margin-bottom: .7em; }
+.contatti { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(26px, 5vw, 80px); align-items: start; border-top: 1px solid var(--linea); }
+.telefono { color: var(--paglia); }
+.orari-riquadro { background: var(--carta); border: 1px solid var(--linea); padding: clamp(18px, 3vw, 32px); }
+.orari tr.oggi th, .orari tr.oggi td { color: var(--paglia); }
+.insegna { margin-top: 22px; }
+.insegna img { width: 100%; border-radius: 2px; }
+.piede { background: #100b09; }
+.piede a:hover { color: var(--paglia); }
+
+@media (max-width: 900px) {
+  .apertura, .cantina, .contatti, .carta-corpo { grid-template-columns: 1fr; }
+  .tavolo { margin: 10px 4% 0; }
+  .toro { --passo: 1.3px; }
+  .marchio-nome small { display: none; }
+  .marchio .marchio-toro { width: 50px; }
+  .tavola-foto { grid-template-columns: 1fr 1fr; }
+  .tavola-foto .a, .tavola-foto .c { grid-row: auto; grid-column: auto; }
+  .tavola-foto .b, .tavola-foto .d { grid-column: 1 / -1; }
+  .tavola-foto .e { display: block; }
+  .tavola-foto .a img, .tavola-foto .c img, .tavola-foto .e img { aspect-ratio: 4 / 5; }
+  .tavola-foto .e { grid-column: 1 / -1; }
+  .tavola-foto .e img { aspect-ratio: 3 / 2; }
+  .carta-foto { position: static; order: -1; max-width: 300px; margin: 6px auto 0; }
+  .carta-foto img { aspect-ratio: 4 / 3; }
+  .cantina-foto figure:nth-child(2) { translate: 0 18px; }
+}
+
+/* ---- versione a più pagine (14/10/2026) ---- */
+html { scrollbar-color: var(--accento) var(--fondo); }
+::selection { background: var(--accento); color: var(--sopra-accento); }
+.sopra:empty { display: none; }
+.pagina-interna h1 { font-size: clamp(2.5rem, 5.6vw, 4.6rem); }/* le comande appese */
+.comande { max-width: var(--largo); margin: 0 auto; padding: clamp(20px, 4vw, 50px) var(--bordo) clamp(60px, 8vw, 110px); display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 3vw, 40px); border-top: 2px dashed var(--linea); }
+.comande a { position: relative; display: grid; gap: 8px; align-content: start; padding: 46px 24px 28px; text-decoration: none; color: var(--inchiostro); rotate: var(--r); transform-origin: 50% 0; transition: rotate .6s cubic-bezier(.16, 1, .3, 1), translate .6s cubic-bezier(.16, 1, .3, 1); box-shadow: 0 24px 30px -20px rgba(0, 0, 0, .8);
+  background: repeating-linear-gradient(92deg, rgba(120, 80, 30, .07) 0 1px, transparent 1px 5px), var(--paglia); }
+.comande a::before { content: ''; position: absolute; left: 50%; top: -14px; width: 22px; height: 34px; translate: -50% 0; background: #2a211c; border-radius: 4px; box-shadow: inset 0 -10px 0 #4a3b32; }
+.comande a:hover, .comande a:focus-visible { rotate: 0deg; translate: 0 6px; }
+.comande i { font: 700 .74rem var(--corpo); font-style: normal; letter-spacing: .16em; text-transform: uppercase; color: var(--mattone); border-bottom: 1px dashed var(--mattone); padding-bottom: 8px; }
+.comande b { font: 400 clamp(2rem, 3.6vw, 3rem) / 1 var(--titoli); color: var(--mattone); }
+.comande span { color: #4a2c1c; }
+.carta h1 { font-size: clamp(2.5rem, 5.6vw, 4.6rem); margin-bottom: .3em; }
+.carta h1 em { font-style: normal; color: var(--mattone); }
+@media (max-width: 900px) { .comande { grid-template-columns: 1fr; gap: 34px; } }

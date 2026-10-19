@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /strumenti/
+Disallow: /prove/
+Disallow: /assets/img/originali/
+
+Sitemap: https://www.arteinorovoghera.it/sitemap.xml

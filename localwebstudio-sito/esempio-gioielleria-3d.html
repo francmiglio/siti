@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="it" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Aurum Lab – sito dimostrativo di Local Web Agency</title>
+  <meta name="description" content="Sito dimostrativo (attività inventata) realizzato da Local Web Agency: esempio di sito 3d per gioielleria.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#f7f3ec">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/esempi-sito.css?v=mur35vot">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="assets/js/dist/esempi.js?v=mur35vot" defer></script>
+</head>
+<body class="demo demo--gioielleria">
+  <div class="demo-barra" role="note">
+    <a class="demo-barra__torna" href="esempi.html" aria-label="Torna agli esempi di Local Web Agency">←</a>
+    <p><strong>Sito dimostrativo</strong> · <span class="demo-barra__lungo">Aurum Lab è un’attività inventata: questo sito l’abbiamo creato noi per mostrarti un sito 3d.</span><span class="demo-barra__corto">attività inventata</span></p>
+    <a class="demo-barra__cta" href="consulenza.html#modulo">Ne voglio uno così</a>
+  </div>
+<header class="d-testata">
+    <div class="d-cont d-testata__int">
+      <a class="d-logo aurum-logo" href="#inizio">Aurum</a>
+      <nav class="d-nav" aria-label="Menu"><a href="#configura">Crea il tuo anello</a><a href="#atelier">Atelier</a></nav>
+      <a class="d-pulsante aurum-btn" href="#atelier">Prendi appuntamento</a>
+    </div>
+  </header>
+  <main id="inizio">
+    <section class="aurum-palco" data-palco-gioiello>
+      <div class="aurum-palco__fisso">
+        <div class="aurum-palco__luce"></div>
+        <canvas data-gioiello="scorrimento" aria-label="Anello in 3D che ruota mentre scorri la pagina"></canvas>
+        <div class="aurum-testi">
+          <div class="aurum-testo attivo" data-passo="0"><div>
+            <small>Atelier di alta gioielleria</small>
+            <h1>L’anello, <em>prima ancora</em> di esistere.</h1>
+            <p>Scorri: lo vedi girare, cambiare metallo e pietra. Così i nostri clienti scelgono il gioiello prima che lo realizziamo a mano.</p>
+          </div></div>
+          <div class="aurum-testo" data-passo="1"><div>
+            <small>01 · Il metallo</small>
+            <h2>Oro giallo <em>18 carati</em>.</h2>
+            <p>Fuso e lavorato nel nostro laboratorio, lucidato a specchio in dodici passaggi.</p>
+          </div></div>
+          <div class="aurum-testo" data-passo="2"><div>
+            <small>02 · La pietra</small>
+            <h2>Uno zaffiro, <em>tagliato a brillante</em>.</h2>
+            <p>Cinquantasette faccette che catturano la luce da ogni angolo.</p>
+          </div></div>
+          <div class="aurum-testo" data-passo="3"><div>
+            <small>03 · La scelta</small>
+            <h2>Oro rosa, <em>smeraldo</em>, o il tuo.</h2>
+            <p>Ogni combinazione è possibile. Più sotto puoi provarle tutte.</p>
+          </div></div>
+        </div>
+        <div class="aurum-avanzamento" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      </div>
+    </section>
+
+    <section class="d-sez" id="configura">
+      <div class="d-cont">
+        <div class="aurum-config d-svela">
+          <div class="aurum-config__tela"><canvas data-gioiello="configuratore" aria-label="Configuratore 3D dell'anello: trascina per ruotarlo"></canvas></div>
+          <div class="aurum-config__pannello" data-configuratore-gioiello>
+            <div>
+              <small style="letter-spacing:.25em;text-transform:uppercase;color:#8a6a2e;font-size:.75rem">Configuratore 3D</small>
+              <h2>Crea il tuo anello</h2>
+              <p style="color:#5b5246">Trascina l’anello per girarlo. Scegli metallo e pietra: cambiano dal vivo.</p>
+            </div>
+            <div><p style="font-weight:600;margin-bottom:10px">Metallo</p>
+              <div class="aurum-campioni" data-gruppo="metallo">
+                <button type="button" data-valore="giallo" data-prezzo="0" aria-pressed="true"><i style="background:#e2b85c"></i>Oro giallo</button>
+                <button type="button" data-valore="rosa" data-prezzo="0"><i style="background:#e8a58a"></i>Oro rosa</button>
+                <button type="button" data-valore="bianco" data-prezzo="120"><i style="background:#dfe3e8"></i>Oro bianco</button>
+              </div>
+            </div>
+            <div><p style="font-weight:600;margin-bottom:10px">Pietra</p>
+              <div class="aurum-campioni" data-gruppo="pietra">
+                <button type="button" data-valore="diamante" data-prezzo="1200" aria-pressed="true"><i style="background:radial-gradient(circle at 35% 35%,#fff,#cfe3f2)"></i>Diamante</button>
+                <button type="button" data-valore="zaffiro" data-prezzo="680"><i style="background:#2f5bd3"></i>Zaffiro</button>
+                <button type="button" data-valore="smeraldo" data-prezzo="740"><i style="background:#1f9d6a"></i>Smeraldo</button>
+                <button type="button" data-valore="rubino" data-prezzo="820"><i style="background:#c8243f"></i>Rubino</button>
+              </div>
+            </div>
+            <p class="aurum-prezzo" data-prezzo-gioiello>da 2.150 € <small>prezzo indicativo · realizzazione in 3 settimane</small></p>
+            <button class="d-pulsante aurum-btn--oro" type="button" data-demo="gioiello">Richiedi questo anello</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="d-sez" id="atelier" style="padding-top:0">
+      <div class="d-cont" style="text-align:center;max-width:720px">
+        <small style="letter-spacing:.25em;text-transform:uppercase;color:#8a6a2e;font-size:.75rem">Atelier</small>
+        <h2 class="d-svela" style="font-size:clamp(2.4rem,5vw,4rem);margin:12px 0 18px">Su appuntamento, <em style="color:#8a6a2e">con calma</em>.</h2>
+        <p class="d-svela" style="color:#5b5246;font-size:1.1rem">Portiamo in atelier le pietre che hai scelto online, così puoi vederle dal vero prima di decidere.</p>
+        <button class="d-pulsante aurum-btn d-svela" type="button" data-demo="appuntamento" style="margin-top:16px">Prendi appuntamento</button>
+      </div>
+    </section>
+  </main>
+  <div class="demo-avviso" id="demo-avviso" role="status" hidden></div>
+  <script type="application/json" id="config">{"versione":"mur35vot","esempio":"gioielleria"}</script>
+</body>
+</html>

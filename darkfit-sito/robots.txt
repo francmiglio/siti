@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /login
+Disallow: /area-riservata
+
+Sitemap: https://dark-fit-775918.hostingersite.com/sitemap.xml

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="it" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Osteria Lume – sito dimostrativo di Local Web Agency</title>
+  <meta name="description" content="Sito dimostrativo (attività inventata) realizzato da Local Web Agency: esempio di sito vetrina con prenotazione tavolo per ristorante.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#17110d">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/esempi-sito.css?v=mur35vot">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="assets/js/dist/esempi.js?v=mur35vot" defer></script>
+</head>
+<body class="demo demo--ristorante">
+  <div class="demo-barra" role="note">
+    <a class="demo-barra__torna" href="esempi.html" aria-label="Torna agli esempi di Local Web Agency">←</a>
+    <p><strong>Sito dimostrativo</strong> · <span class="demo-barra__lungo">Osteria Lume è un’attività inventata: questo sito l’abbiamo creato noi per mostrarti un sito vetrina con prenotazione tavolo.</span><span class="demo-barra__corto">attività inventata</span></p>
+    <a class="demo-barra__cta" href="consulenza.html#modulo">Ne voglio uno così</a>
+  </div>
+<header class="d-testata">
+    <div class="d-cont d-testata__int">
+      <a class="d-logo lume-logo" href="#inizio">Osteria Lume</a>
+      <nav class="d-nav" aria-label="Menu"><a href="#menu">Menu</a><a href="#tavolo">Prenota</a><a href="#dove">Dove siamo</a></nav>
+      <a class="d-pulsante lume-btn" href="#tavolo">Prenota un tavolo</a>
+    </div>
+  </header>
+  <main id="inizio">
+    <section class="lume-hero" data-profondita>
+      <div class="lume-hero__strato" style="--z:-18"><img src="assets/img/foto-lume-sala-480.webp" srcset="assets/img/foto-lume-sala-480.webp 480w, assets/img/foto-lume-sala-800.webp 800w" sizes="100vw" width="480" height="319" alt="Sala dell'osteria con tavoli in legno apparecchiati" loading="eager" decoding="async"></div>
+      <div class="lume-hero__testo">
+        <small>cucina di stagione <span class="lume-fiamma"></span> dal martedì alla domenica</small>
+        <h1>A lume<br>di candela.</h1>
+        <p>Pasta tirata a mano ogni mattina, verdure dell’orto vicino e una cantina di piccoli produttori. Una sala sola, ventotto coperti.</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <a class="d-pulsante lume-btn" href="#tavolo">Prenota un tavolo</a>
+          <a class="d-pulsante lume-btn--linea" href="#menu">Guarda il menu</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="d-sez" id="menu">
+      <div class="d-cont">
+        <h2 class="lume-titolo d-svela">Il menu <em>d’autunno</em></h2>
+        <p class="lume-sotto d-svela">Cambia con le stagioni, e a volte con l’umore dello chef.</p>
+        <div class="lume-schede" role="tablist" data-schede-menu>
+          <button type="button" role="tab" aria-selected="true" data-scheda="antipasti">Antipasti</button>
+          <button type="button" role="tab" aria-selected="false" data-scheda="primi">Primi</button>
+          <button type="button" role="tab" aria-selected="false" data-scheda="secondi">Secondi</button>
+          <button type="button" role="tab" aria-selected="false" data-scheda="dolci">Dolci</button>
+        </div>
+        <ul class="lume-menu" data-menu aria-live="polite"></ul>
+      </div>
+    </section>
+
+    <section class="d-sez" style="padding-top:0">
+      <div class="d-cont lume-striscia">
+        <img src="assets/img/foto-lume-pasta-480.webp" srcset="assets/img/foto-lume-pasta-480.webp 480w, assets/img/foto-lume-pasta-800.webp 800w" sizes="(min-width: 900px) 28vw, 46vw" width="480" height="320" alt="Mani che lavorano la pasta fresca" loading="lazy" decoding="async">
+        <img src="assets/img/foto-lume-tavola-480.webp" srcset="assets/img/foto-lume-tavola-480.webp 480w, assets/img/foto-lume-tavola-800.webp 800w" sizes="(min-width: 900px) 40vw, 92vw" width="480" height="320" alt="Piatto servito al tavolo tra bicchieri di vino" loading="lazy" decoding="async">
+        <img src="assets/img/foto-lume-vino-480.webp" srcset="assets/img/foto-lume-vino-480.webp 480w, assets/img/foto-lume-vino-800.webp 800w" sizes="(min-width: 900px) 28vw, 46vw" width="480" height="318" alt="Bottiglia di vino e calici su un tavolo in legno" loading="lazy" decoding="async">
+      </div>
+    </section>
+
+    <section class="d-sez" id="tavolo" style="padding-top:0">
+      <div class="d-cont">
+        <div class="lume-prenota d-svela">
+          <div>
+            <h2>Un tavolo per stasera?</h2>
+            <p>Scegli persone, giorno e orario: ti confermiamo con un messaggio entro pochi minuti.</p>
+          </div>
+          <form class="lume-modulo" data-modulo-tavolo>
+            <label>Persone<select><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7+</option></select></label>
+            <label>Giorno<input type="date" data-oggi></label>
+            <label>Orario<select><option>19:30</option><option>20:00</option><option>20:30</option><option>21:00</option><option>21:30</option></select></label>
+            <button class="d-pulsante" type="submit">Richiedi il tavolo</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="d-sez" id="dove" style="padding-top:0">
+      <div class="d-cont lume-info">
+        <div class="d-svela"><h3>Orari</h3><p>Mar–dom 19–23<br>Sabato e domenica anche 12–14.30</p></div>
+        <div class="d-svela" style="--i:1"><h3>Dove</h3><p>Vicolo delle Candele 3<br>(indirizzo d’esempio)</p></div>
+        <div class="d-svela" style="--i:2"><h3>Contatti</h3><p><button class="d-pulsante lume-btn--linea" type="button" data-demo="chiamata">Chiama l’osteria</button></p></div>
+      </div>
+    </section>
+  </main>
+  <div class="demo-avviso" id="demo-avviso" role="status" hidden></div>
+  <script type="application/json" id="config">{"versione":"mur35vot","esempio":"ristorante"}</script>
+</body>
+</html>

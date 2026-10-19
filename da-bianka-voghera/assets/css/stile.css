@@ -1,0 +1,85 @@
+﻿/* Da Bianka · panna, bruno caldo e un rosa cuore. Tutto ruota intorno a una cosa sola: la scala dei biondi.
+   Segno proprio: il ventaglio 3D di sette fotografie, dal più scuro al più chiaro, mosso da un cursore. */
+:root { --fondo: #fbf6f1; --carta: #fffdfb; --testo: #33241d; --tenue: #7a665c; --linea: #eadfd4; --accento: #33241d; --sopra-accento: #fbf6f1; --rosa: #e0788f; --miele: #c79a5b;
+  --titoli: 'Yeseva One', Georgia, serif; --corpo: 'Figtree', 'Segoe UI', sans-serif; }
+h1 em, h2 em { font-style: normal; color: var(--rosa); }
+.sopra { color: var(--miele); }
+.marchio-nome { font-family: var(--titoli); font-size: 1.7rem; }
+.marchio-nome i { font-style: normal; color: var(--rosa); font-size: .8em; margin-left: 4px; }
+.bottone.pieno:hover { background: var(--rosa); border-color: var(--rosa); }
+.voto .stelle { color: var(--miele); }
+.centro { justify-content: center; text-align: center; }
+
+.apertura { padding: clamp(30px, 5vw, 60px) 0 clamp(50px, 7vw, 90px); text-align: center; overflow: hidden; }
+.apertura-testo { padding: 0 var(--bordo); }
+.apertura .sopra { justify-content: center; }
+.apertura .grande { margin: 1em auto 0; }
+.ventaglio { --l: clamp(160px, 19vw, 270px); position: relative; height: calc(var(--l) * 1.5); margin-top: clamp(20px, 3vw, 40px); perspective: 1500px; touch-action: pan-y; cursor: grab; }
+.ventaglio figure { --d: calc(var(--i) - var(--ora)); --a: max(var(--d), calc(var(--d) * -1)); position: absolute; left: 50%; top: 4%; width: var(--l); aspect-ratio: 3 / 4; margin-left: calc(var(--l) / -2); border-radius: 14px; overflow: hidden;
+  transform: translateX(calc(var(--d) * var(--l) * .62)) translateZ(calc(var(--a) * -150px)) rotateY(calc(var(--d) * -24deg)); z-index: calc(20 - var(--a));
+  transition: transform .7s cubic-bezier(.2, .8, .2, 1), filter .7s, box-shadow .7s; filter: brightness(calc(1 - var(--a) * .12)) saturate(calc(1 - var(--a) * .15)); box-shadow: 0 30px 50px -26px rgba(51, 36, 29, .6); }
+.ventaglio figure.ora { box-shadow: 0 0 0 5px var(--carta), 0 0 0 7px var(--rosa), 0 40px 60px -26px rgba(51, 36, 29, .7); }
+.ventaglio img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.cursore { display: flex; align-items: center; gap: 16px; max-width: 620px; margin: 6px auto 0; padding: 0 var(--bordo); font-size: .78rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--tenue); }
+.cursore input { flex: 1; appearance: none; height: 12px; border-radius: 999px; background: linear-gradient(90deg, #4a3226, #8a6240, #c79a5b, #e3c594, #f1e6cf, #eef0f2); outline-offset: 6px; }
+.cursore input::-webkit-slider-thumb { appearance: none; width: 30px; height: 30px; border-radius: 50%; background: var(--carta); border: 3px solid var(--rosa); box-shadow: 0 4px 10px rgba(51, 36, 29, .3); cursor: grab; }
+.cursore input::-moz-range-thumb { width: 26px; height: 26px; border-radius: 50%; background: var(--carta); border: 3px solid var(--rosa); cursor: grab; }
+.scala-nome { font-family: var(--titoli); font-size: clamp(1.6rem, 3.4vw, 2.6rem); margin: 18px 0 0; }
+.apertura .azioni { margin-top: 1.1em; }
+
+.servizi-testa { max-width: 62ch; margin-bottom: clamp(24px, 4vw, 46px); }
+.servizi-lista { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(12px, 2vw, 24px); perspective: 1400px; }
+.servizi-lista img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 14px; margin-bottom: 16px; }
+.servizi-lista h3 { margin-bottom: .3em; }
+.servizi-lista p { color: var(--tenue); margin: 0; font-size: .98rem; }
+.servizi-lista article:nth-child(even) { margin-top: 40px; }
+
+.spose { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(26px, 5vw, 70px); align-items: center; background: var(--testo); color: var(--fondo); max-width: none; padding-inline: max(var(--bordo), calc((100vw - var(--largo)) / 2 + var(--bordo))); }
+.spose .grande { color: #d8c8bd; }
+.spose .bottone { border-color: var(--fondo); color: var(--fondo); margin-top: .6em; }
+.spose .bottone:hover { background: var(--rosa); border-color: var(--rosa); }
+.spose-foto { position: relative; padding: 0 0 14% 0; perspective: 1400px; }
+.spose-foto figure:first-child { width: 72%; }
+.spose-foto figure:last-child { position: absolute; right: 0; bottom: 0; width: 46%; box-shadow: 0 0 0 8px var(--testo); border-radius: 14px; }
+.spose-foto img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 14px; }
+
+.parole { text-align: center; }
+.parole .sopra { justify-content: center; }
+.parole-lista { display: grid; gap: 22px; max-width: 900px; margin: 0 auto 20px; }
+.parole blockquote { margin: 0; font-family: var(--titoli); font-size: clamp(1.4rem, 2.8vw, 2.2rem); line-height: 1.2; }
+.parole blockquote:nth-child(2) { color: var(--rosa); }
+
+.richiesta { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(26px, 5vw, 70px); align-items: start; border-top: 1px solid var(--linea); }
+.indirizzo a { color: var(--rosa); }
+.modulo { background: var(--carta); border: 1px solid var(--linea); border-radius: 18px; padding: clamp(20px, 3vw, 40px); display: grid; gap: 22px; }
+.campi.uno { grid-template-columns: 1fr; }
+.modulo .bottone { justify-content: center; }
+.modulo .nota { margin: 0; }
+.domande summary::after { color: var(--rosa); }
+.piede { background: var(--testo); color: #c9b8ad; border: 0; }
+.piede-su b { color: var(--fondo); }
+.piede-giu { border-color: #4d3a31; }
+.piede a:hover { color: var(--rosa); }
+
+@media (max-width: 900px) {
+  .servizi-lista { grid-template-columns: 1fr 1fr; }
+  .servizi-lista article:nth-child(even) { margin-top: 0; }
+  .spose, .richiesta { grid-template-columns: 1fr; }
+  .spose-foto { max-width: 420px; }
+  .ventaglio { --l: clamp(170px, 54vw, 260px); }
+}
+
+/* ---- versione a più pagine (14/10/2026) ---- */
+html { scrollbar-color: var(--accento) var(--fondo); }
+::selection { background: var(--accento); color: var(--sopra-accento); }
+.sopra:empty { display: none; }
+.pagina-interna h1 { font-size: clamp(2.4rem, 5.4vw, 4.4rem); }/* i due bigliettini sullo specchio */
+.bigliettini { max-width: 980px; margin: 0 auto; padding: clamp(20px, 4vw, 60px) var(--bordo) clamp(50px, 7vw, 100px); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(18px, 4vw, 60px); }
+.bigliettini a { position: relative; display: grid; gap: 10px; padding: clamp(26px, 4vw, 50px) clamp(22px, 3vw, 40px); background: #fff; text-decoration: none; rotate: var(--r); box-shadow: 0 26px 40px -26px rgba(60, 35, 25, .6); transition: rotate .6s cubic-bezier(.16, 1, .3, 1), translate .6s cubic-bezier(.16, 1, .3, 1); }
+.bigliettini a::before { content: ''; position: absolute; left: 50%; top: -12px; width: 84px; height: 26px; translate: -50% 0; rotate: -3deg; background: color-mix(in srgb, var(--accento) 45%, #fff); opacity: .85; }
+.bigliettini a:hover, .bigliettini a:focus-visible { rotate: 0deg; translate: 0 -8px; }
+.bigliettini b { font: 400 clamp(2rem, 4.4vw, 3.4rem) / 1 var(--titoli); color: var(--accento); }
+.bigliettini span { color: var(--tenue); }
+.bigliettini svg { width: 28px; height: 28px; fill: none; stroke: var(--accento); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 700px) { .bigliettini { grid-template-columns: 1fr; } }
+.bigliettini a::before { background: #f3b6c3; } .bigliettini b, .bigliettini svg { color: #d4607b; stroke: #d4607b; }

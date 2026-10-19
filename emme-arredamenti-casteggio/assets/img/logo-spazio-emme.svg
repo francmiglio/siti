@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 275" fill="none">
+  <title>Spazio Emme</title>
+  <path d="M83 15h22l90 243h-25z" fill="currentColor"/>
+  <path d="M178 15h22l98 243h-26z" fill="currentColor"/>
+  <path d="M92 40 17 200c-13 30 9 58 45 58 24 0 40-14 49-33L180 40" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

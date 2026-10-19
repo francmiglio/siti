@@ -1,0 +1,98 @@
+﻿/* La Rava e la Fava · i colori del loro marchio disegnato a mano: carta crema, verde pisello, viola rapa, e l'arancione delle tovagliette.
+   Segno proprio: i tre rulli del menu, che girano in 3D come quelli di una macchinetta. */
+:root { --fondo: #fbf8e6; --carta: #fffdf3; --testo: #23261c; --tenue: #5f6452; --linea: #e3dfc2; --accento: #1f7a5c; --sopra-accento: #fffdf3; --rapa: #8d4a92; --pisello: #7fb23a; --arancio: #f08a24;
+  --titoli: 'Fraunces', Georgia, serif; --corpo: 'Nunito Sans', 'Segoe UI', sans-serif; --raggio: 12px; }
+h1, h2, h3 { font-weight: 600; letter-spacing: -.015em; }
+h1 em, h2 em { font-style: italic; color: var(--rapa); }
+.marchio img { height: 80px; mix-blend-mode: multiply; }
+.bottone { font-weight: 700; border-width: 2px; }
+.bottone.pieno:hover { background: var(--rapa); border-color: var(--rapa); }
+
+.apertura { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(20px, 4vw, 60px); align-items: center; max-width: var(--largo); margin: 0 auto; padding: clamp(30px, 5vw, 70px) var(--bordo) clamp(50px, 7vw, 96px); }
+.apertura .grande { margin-top: 1.3em; }
+.apertura-piatti { position: relative; aspect-ratio: 1 / .96; }
+.tovaglietta { position: absolute; inset: 9% 4% 6% 10%; background: var(--arancio); border-radius: 10px; rotate: -4deg; box-shadow: 0 30px 50px -30px rgba(120, 70, 10, .6); }
+.apertura-piatti figure { position: absolute; border-radius: 50%; overflow: hidden; box-shadow: 0 0 0 8px var(--carta), 0 26px 40px -18px rgba(35, 38, 28, .55); animation: dondola 9s ease-in-out infinite; }
+.apertura-piatti img { width: 100%; height: 100%; object-fit: cover; }
+.apertura-piatti .p1 { width: 62%; aspect-ratio: 1; left: 20%; top: 12%; }
+.apertura-piatti .p2 { width: 36%; aspect-ratio: 1; left: 0; bottom: 2%; animation-delay: -3s; }
+.apertura-piatti .p3 { width: 30%; aspect-ratio: 1; right: 0; top: 0; animation-delay: -6s; }
+@keyframes dondola { 50% { rotate: 5deg; translate: 0 -8px; } }
+
+/* ---------- i rulli ---------- */
+.menu { text-align: center; }
+.menu-testa .grande { margin-inline: auto; }
+.rulli { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(10px, 2.4vw, 30px); margin: clamp(24px, 4vw, 46px) auto 0; max-width: 980px; padding: clamp(14px, 2.6vw, 30px); background: var(--testo); border-radius: 22px; box-shadow: inset 0 0 0 3px var(--arancio), 0 30px 60px -30px rgba(35, 38, 28, .7); }
+.rullo-nome { font: 700 .78rem var(--corpo); letter-spacing: .24em; text-transform: uppercase; color: var(--arancio); margin: 0 0 10px; }
+.rullo-finestra { --l: clamp(96px, 22vw, 250px); height: var(--l); perspective: 900px; overflow: hidden; border-radius: 12px; background: #11130d; position: relative; }
+.rullo-finestra::after { content: ''; position: absolute; inset: 0; background: linear-gradient(#11130d 0, transparent 22%, transparent 78%, #11130d 100%); pointer-events: none; }
+.rullo-giro { position: absolute; inset: 0; transform-style: preserve-3d; transform: translateZ(calc(var(--l) * -.866)) rotateX(var(--giro, 0deg)); transition: transform var(--tempo, 1.6s) cubic-bezier(.15, .7, .2, 1); }
+.rullo-giro figure { position: absolute; inset: 0; transform: rotateX(calc(var(--i) * 60deg)) translateZ(calc(var(--l) * .866)); backface-visibility: hidden; }
+.rullo-giro img { width: 100%; height: 100%; object-fit: cover; }
+.rullo-piatto { margin: 14px 0 0; color: var(--fondo); display: grid; gap: 3px; min-height: 6.2em; align-content: start; }
+.rullo-piatto b { font-family: var(--titoli); font-size: clamp(1rem, 1.8vw, 1.4rem); line-height: 1.1; }
+.rullo-piatto span { font-size: clamp(.78rem, 1.1vw, .93rem); color: rgba(251, 248, 230, .7); line-height: 1.35; }
+.menu-azioni { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin: 26px 0 16px; }
+.gira { font-size: 1.15rem; padding-inline: 44px; background: var(--arancio); border-color: var(--arancio); color: var(--testo); }
+.gira:hover { background: var(--rapa); border-color: var(--rapa); color: #fff; }
+.menu .nota { max-width: 62ch; margin: 0 auto; }
+
+.cucina { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(26px, 5vw, 70px); align-items: center; }
+.cucina-foto { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; perspective: 1300px; }
+.cucina-foto figure { position: relative; }
+.cucina-foto figure:first-child { grid-row: span 2; align-self: center; }
+.cucina-foto img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 10px; }
+.cucina-foto figcaption { position: absolute; left: 10px; bottom: 10px; background: var(--arancio); color: var(--testo); font: 700 .78rem var(--corpo); padding: 4px 11px; border-radius: 6px; rotate: -2deg; }
+.lista { list-style: none; padding: 0; margin: 1.8em 0 0; }
+.lista li { display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 13px 0; border-top: 1px solid var(--linea); align-items: baseline; }
+.lista b { font-family: var(--titoli); font-size: 1.35rem; color: var(--accento); }
+.lista span { color: var(--tenue); }
+
+.storia { background: var(--accento); color: var(--sopra-accento); max-width: none; }
+.storia > * { max-width: calc(var(--largo) - var(--bordo) * 2); margin-inline: auto; }
+.storia .sopra { color: #cfe8a8; }
+.tappe { list-style: none; padding: 0; margin-top: clamp(24px, 4vw, 46px); display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+.tappe li { padding: 6px clamp(16px, 2.6vw, 40px); border-left: 2px dashed rgba(255, 253, 243, .3); }
+.tappe li:first-child { border-left: 0; padding-left: 0; }
+.tappa-n { font-family: var(--titoli); font-style: italic; font-size: 2.4rem; color: #cfe8a8; display: block; line-height: 1; margin-bottom: 10px; }
+.tappe h3 { margin-bottom: .4em; }
+.tappe p { margin: 0; color: rgba(255, 253, 243, .82); }
+
+.posto-foto { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; perspective: 1400px; margin-top: 10px; }
+.posto-foto img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
+.posto-foto .a { grid-row: span 2; }
+.posto-foto .d { grid-column: 2 / 4; }
+.posto-foto .b img, .posto-foto .c img { aspect-ratio: 1; }
+.posto-foto .d img { aspect-ratio: 2.1 / 1; }
+
+.contatti { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(26px, 5vw, 70px); align-items: start; border-top: 1px solid var(--linea); }
+.orari-riquadro { background: var(--carta); border: 2px solid var(--testo); border-radius: 14px; padding: clamp(18px, 3vw, 32px); box-shadow: 8px 8px 0 var(--pisello); }
+.piede { background: var(--testo); color: rgba(251, 248, 230, .74); border: 0; }
+.piede-su b { color: var(--fondo); }
+.piede-giu { border-color: rgba(251, 248, 230, .16); }
+.piede a:hover { color: var(--arancio); }
+
+@media (max-width: 900px) {
+  .apertura, .cucina, .contatti { grid-template-columns: 1fr; }
+  .apertura-piatti { max-width: 430px; width: 100%; margin: 0 auto; order: -1; }
+  .tappe { grid-template-columns: 1fr; gap: 22px; }
+  .tappe li { border-left: 0; padding: 0; }
+  .posto-foto { grid-template-columns: 1fr 1fr; }
+  .posto-foto .a, .posto-foto .d { grid-column: 1 / -1; grid-row: auto; }
+  .lista li { grid-template-columns: 84px 1fr; }
+}
+
+/* ---- versione a più pagine (14/10/2026) ---- */
+html { scrollbar-color: var(--accento) var(--fondo); }
+::selection { background: var(--accento); color: var(--sopra-accento); }
+.sopra:empty { display: none; }
+.pagina-interna h1 { font-size: clamp(2.5rem, 5.6vw, 4.6rem); }/* le tre tovagliette di carta */
+.tovagliette { display: grid; grid-template-columns: repeat(3, 1fr); }
+.tovagliette a { position: relative; display: grid; align-content: space-between; gap: 40px; min-height: clamp(220px, 30vw, 380px); padding: clamp(22px, 3vw, 44px); text-decoration: none; color: #fff; overflow: hidden; transition: flex .5s, filter .4s; background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, .06) 0 2px, transparent 2px 14px); }
+.tovagliette .verde { background-color: #1f7a55; } .tovagliette .viola { background-color: #6b2d6b; } .tovagliette .arancio { background-color: #e87f1a; color: #2a1606; }
+.tovagliette b { font: 400 clamp(2rem, 4.2vw, 3.6rem) / 1 var(--titoli); max-width: 9ch; }
+.tovagliette span { max-width: 28ch; font-size: 1.02rem; }
+.tovagliette svg { position: absolute; right: clamp(18px, 3vw, 40px); top: clamp(22px, 3vw, 44px); width: 34px; height: 34px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; transition: transform .5s cubic-bezier(.16, 1, .3, 1); }
+.tovagliette a:hover svg, .tovagliette a:focus-visible svg { transform: translate(8px, -8px) rotate(-45deg); }
+.tovagliette a:hover { filter: brightness(1.08); }
+@media (max-width: 900px) { .tovagliette { grid-template-columns: 1fr; } .tovagliette a { min-height: 170px; gap: 18px; } }

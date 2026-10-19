@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url><loc>https://www.amarcordvoghera.it/</loc><lastmod>2026-10-10</lastmod><priority>1.0</priority>
+    <image:image><image:loc>https://www.amarcordvoghera.it/assets/img/anteprima.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.amarcordvoghera.it/assets/img/veranda-sera-1400.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.amarcordvoghera.it/assets/img/veranda-tavoli-1400.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.amarcordvoghera.it/assets/img/veranda-lucine-1400.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.amarcordvoghera.it/assets/img/gnocchi-su-piada-1400.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.amarcordvoghera.it/assets/img/piada-aperta-spritz-1400.webp</image:loc></image:image>
+  </url>
+  <url><loc>https://www.amarcordvoghera.it/menu.html</loc><lastmod>2026-10-10</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.amarcordvoghera.it/privacy-policy.html</loc><lastmod>2026-10-10</lastmod><priority>0.2</priority></url>
+  <url><loc>https://www.amarcordvoghera.it/cookie-policy.html</loc><lastmod>2026-10-10</lastmod><priority>0.2</priority></url>
+</urlset>

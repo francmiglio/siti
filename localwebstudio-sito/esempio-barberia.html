@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="it" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Barberia Ottone – sito dimostrativo di Local Web Agency</title>
+  <meta name="description" content="Sito dimostrativo (attività inventata) realizzato da Local Web Agency: esempio di sito con prenotazioni per barbiere.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#141210">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/esempi-sito.css?v=mur35vot">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="assets/js/dist/esempi.js?v=mur35vot" defer></script>
+</head>
+<body class="demo demo--barberia">
+  <div class="demo-barra" role="note">
+    <a class="demo-barra__torna" href="esempi.html" aria-label="Torna agli esempi di Local Web Agency">←</a>
+    <p><strong>Sito dimostrativo</strong> · <span class="demo-barra__lungo">Barberia Ottone è un’attività inventata: questo sito l’abbiamo creato noi per mostrarti un sito con prenotazioni.</span><span class="demo-barra__corto">attività inventata</span></p>
+    <a class="demo-barra__cta" href="consulenza.html#modulo">Ne voglio uno così</a>
+  </div>
+<header class="d-testata">
+    <div class="d-cont d-testata__int">
+      <a class="d-logo ottone-logo" href="#inizio"><i></i>Ottone</a>
+      <nav class="d-nav" aria-label="Menu"><a href="#listino">Listino</a><a href="#prenota">Prenota</a><a href="#bottega">La bottega</a><a href="#dove">Dove siamo</a></nav>
+      <a class="d-pulsante ottone-btn" href="#prenota">Prenota</a>
+    </div>
+  </header>
+  <main id="inizio">
+    <section class="ottone-hero">
+      <img src="assets/img/foto-ottone-taglio-480.webp" srcset="assets/img/foto-ottone-taglio-480.webp 480w, assets/img/foto-ottone-taglio-800.webp 800w" sizes="100vw" width="480" height="600" alt="Barbiere che rifinisce un taglio con la macchinetta" loading="eager" decoding="async">
+      <div class="d-cont">
+        <h1 class="d-svela">Taglio.<br>Barba.<br><span>Calma.</span></h1>
+        <p class="d-svela" style="--i:1">Barberia classica con l’agenda online: scegli servizio, barbiere e orario in trenta secondi. Nessuna attesa, nessuna telefonata.</p>
+        <a class="d-pulsante ottone-btn d-svela" style="--i:2" href="#prenota">Prenota il tuo posto →</a>
+      </div>
+    </section>
+
+    <section class="d-sez" id="listino">
+      <div class="d-cont">
+        <h2 class="ottone-titolo d-svela">Listino <span>servizi</span></h2>
+        <ul class="ottone-listino d-svela">
+          <li><div>Taglio uomo<small>shampoo e styling inclusi · 30 min</small></div><span></span><b>22 €</b></li>
+          <li><div>Barba<small>panno caldo e rifinitura a rasoio · 20 min</small></div><span></span><b>15 €</b></li>
+          <li><div>Taglio + barba<small>il classico completo · 50 min</small></div><span></span><b>32 €</b></li>
+          <li><div>Rasatura tradizionale<small>schiuma, pennello, rasoio · 30 min</small></div><span></span><b>20 €</b></li>
+          <li><div>Taglio bambino<small>fino a 12 anni · 20 min</small></div><span></span><b>15 €</b></li>
+          <li><div>Trattamento cuoio capelluto<small>con massaggio · 15 min</small></div><span></span><b>12 €</b></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="d-sez" id="prenota" style="padding-top:0">
+      <div class="d-cont">
+        <h2 class="ottone-titolo d-svela">Prenota <span>online</span></h2>
+        <div class="prenota d-svela" data-prenota>
+          <div>
+            <div class="prenota__passo">
+              <p>1 · Servizio</p>
+              <div class="prenota__scelte" data-gruppo="servizio">
+                <button type="button" data-valore="Taglio uomo" data-durata="30">Taglio uomo<small>22 € · 30 min</small></button>
+                <button type="button" data-valore="Barba" data-durata="20">Barba<small>15 € · 20 min</small></button>
+                <button type="button" data-valore="Taglio + barba" data-durata="50">Taglio + barba<small>32 € · 50 min</small></button>
+                <button type="button" data-valore="Rasatura tradizionale" data-durata="30">Rasatura<small>20 € · 30 min</small></button>
+              </div>
+            </div>
+            <div class="prenota__passo">
+              <p>2 · Barbiere</p>
+              <div class="prenota__scelte" data-gruppo="barbiere">
+                <button type="button" data-valore="Leo">Leo<small>taglio classico</small></button>
+                <button type="button" data-valore="Sam">Sam<small>sfumature e barba</small></button>
+                <button type="button" data-valore="Il primo libero">Il primo libero<small>più disponibilità</small></button>
+              </div>
+            </div>
+            <div class="prenota__passo">
+              <p>3 · Giorno</p>
+              <div class="prenota__scelte" data-gruppo="giorno" data-giorni></div>
+            </div>
+            <div class="prenota__passo">
+              <p>4 · Orario</p>
+              <div class="prenota__scelte prenota__orari" data-gruppo="orario" data-orari><small style="color:#a99c8a">Scegli prima un giorno</small></div>
+            </div>
+          </div>
+          <aside class="prenota__riepilogo" aria-live="polite">
+            <div data-riepilogo>
+              <h3>Il tuo appuntamento</h3>
+              <dl>
+                <dt>Servizio</dt><dd data-mostra="servizio">—</dd>
+                <dt>Barbiere</dt><dd data-mostra="barbiere">—</dd>
+                <dt>Giorno</dt><dd data-mostra="giorno">—</dd>
+                <dt>Ora</dt><dd data-mostra="orario">—</dd>
+              </dl>
+              <label class="vh" for="pr-nome">Nome</label><input id="pr-nome" placeholder="Nome" autocomplete="off">
+              <label class="vh" for="pr-tel">Telefono</label><input id="pr-tel" placeholder="Telefono" inputmode="tel" autocomplete="off">
+              <button class="d-pulsante ottone-btn" type="button" data-conferma disabled>Conferma prenotazione</button>
+              <p style="font-size:.8rem;color:#6c6257;margin-top:10px">Riceverai un promemoria su WhatsApp il giorno prima.</p>
+            </div>
+            <div class="prenota__ok" data-fatto hidden>
+              <b>✓</b>
+              <h3>Prenotato!</h3>
+              <p data-testo-ok></p>
+              <p style="font-size:.8rem;color:#6c6257">Sito dimostrativo: nessuna prenotazione è stata inviata.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="d-sez" id="bottega" style="padding-top:0">
+      <div class="d-cont">
+        <h2 class="ottone-titolo d-svela">La <span>bottega</span></h2>
+        <div class="ottone-galleria d-svela">
+          <img src="assets/img/foto-ottone-poltrona-480.webp" srcset="assets/img/foto-ottone-poltrona-480.webp 480w, assets/img/foto-ottone-poltrona-800.webp 800w" sizes="(min-width: 900px) 40vw, 92vw" width="480" height="720" alt="Cliente sulla poltrona del barbiere con mantellina a righe" loading="lazy" decoding="async">
+          <img src="assets/img/foto-ottone-attrezzi-480.webp" srcset="assets/img/foto-ottone-attrezzi-480.webp 480w, assets/img/foto-ottone-attrezzi-800.webp 800w" sizes="(min-width: 900px) 28vw, 46vw" width="480" height="320" alt="Pennello da barba, rasoi e macchinette sul banco" loading="lazy" decoding="async">
+          <img src="assets/img/foto-ottone-postazione-480.webp" srcset="assets/img/foto-ottone-postazione-480.webp 480w, assets/img/foto-ottone-postazione-800.webp 800w" sizes="(min-width: 900px) 28vw, 46vw" width="480" height="319" alt="Postazione d'epoca con poltrona e specchio" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <section class="d-sez ottone-info" id="dove">
+      <div class="d-cont ottone-info__g">
+        <div class="d-svela"><h3>Orari</h3><p>Mar–ven 9–19.30<br>Sabato 8.30–18<br>Domenica e lunedì chiuso</p></div>
+        <div class="d-svela" style="--i:1"><h3>Dove</h3><p>Piazza del Mercato 4<br>(indirizzo d’esempio)</p></div>
+        <div class="d-svela" style="--i:2"><h3>Contatti</h3><p><button class="d-pulsante ottone-btn" type="button" data-demo="whatsapp">Scrivici su WhatsApp</button></p></div>
+      </div>
+    </section>
+  </main>
+  <div class="demo-avviso" id="demo-avviso" role="status" hidden></div>
+  <script type="application/json" id="config">{"versione":"mur35vot","esempio":"barberia"}</script>
+</body>
+</html>

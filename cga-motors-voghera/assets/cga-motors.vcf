@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+N:;CGA Motors;;;
+FN:CGA Motors
+ORG:CGA Motors (CAR S.R.L.)
+TEL;TYPE=WORK,VOICE:+39038348572
+TEL;TYPE=CELL:+393515775590
+item1.TEL:+393312796847
+item1.X-ABLabel:Soccorso H24
+EMAIL;TYPE=WORK:venditeservizi@cgaauto.it
+ADR;TYPE=WORK:;;Via Zanardi Bonfiglio, 49;Voghera;PV;27058;Italia
+URL:https://www.cgaauto.it
+END:VCARD

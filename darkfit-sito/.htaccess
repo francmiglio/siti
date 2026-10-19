@@ -1,0 +1,48 @@
+# Dark Fit - generato da strumenti/file-sito.js (solo caratteri ASCII)
+# Nessun reindirizzamento di dominio o di protocollo: il sito funziona su qualsiasi dominio,
+# compreso quello temporaneo di Hostinger. L'HTTPS si attiva dal pannello Hostinger.
+Options -Indexes
+DirectoryIndex index.html
+AddDefaultCharset UTF-8
+AddType image/webp .webp
+AddType video/mp4 .mp4
+AddType image/svg+xml .svg
+AddType application/manifest+json .webmanifest
+
+# Sito a pagina unica (React): ogni indirizzo che non e' un file vero apre index.html.
+# /hcgi/ resta escluso: e' il backend (login, area tesserati, newsletter).
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.html$ - [L]
+# /sedi/ -> /sedi (stesso dominio): i file del sito hanno percorsi relativi e vanno cercati dalla radice.
+RewriteCond %{REQUEST_URI} !^/hcgi/
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+RewriteCond %{REQUEST_URI} !^/hcgi/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+# JS, CSS, foto e video stanno solo in assets/ con un codice nel nome che cambia a ogni modifica
+# (versionamento automatico di Vite): cache di un anno senza rischio di versioni vecchie.
+<FilesMatch "\.(js|css|webp|mp4|woff2)$">
+Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
+<FilesMatch "\.(ico|png|svg|webmanifest)$">
+Header set Cache-Control "public, max-age=86400"
+</FilesMatch>
+<FilesMatch "\.(html|xml|txt)$">
+Header set Cache-Control "public, max-age=600"
+</FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml application/manifest+json application/xml text/plain
+</IfModule>

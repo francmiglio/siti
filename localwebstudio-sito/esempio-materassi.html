@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="it" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Dormiveglia – sito dimostrativo di Local Web Agency</title>
+  <meta name="description" content="Sito dimostrativo (attività inventata) realizzato da Local Web Agency: esempio di e-commerce per materassi e cuscini.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#fbfaf7">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/esempi-sito.css?v=mur35vot">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="assets/js/dist/esempi.js?v=mur35vot" defer></script>
+</head>
+<body class="demo demo--materassi">
+  <div class="demo-barra" role="note">
+    <a class="demo-barra__torna" href="esempi.html" aria-label="Torna agli esempi di Local Web Agency">←</a>
+    <p><strong>Sito dimostrativo</strong> · <span class="demo-barra__lungo">Dormiveglia è un’attività inventata: questo sito l’abbiamo creato noi per mostrarti un e-commerce.</span><span class="demo-barra__corto">attività inventata</span></p>
+    <a class="demo-barra__cta" href="consulenza.html#modulo">Ne voglio uno così</a>
+  </div>
+<header class="d-testata">
+    <div class="d-cont d-testata__int">
+      <a class="d-logo dormi-logo" href="#inizio"><i></i>Dormiveglia</a>
+      <nav class="d-nav" aria-label="Menu"><a href="#negozio">Materassi</a><a href="#configura">Su misura</a><a href="#negozio">Cuscini</a><a href="#garanzie">Garanzie</a></nav>
+      <button class="dormi-carrello" type="button" data-apri-carrello aria-label="Apri il carrello">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2.5l2.2 10.5h10.6L20.5 8H7M9.5 19.5a1 1 0 1 0 0 .1M17 19.5a1 1 0 1 0 0 .1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <b data-conteggio>0</b>
+      </button>
+    </div>
+  </header>
+  <main id="inizio">
+    <section class="d-cont dormi-hero">
+      <div>
+        <h1 class="d-svela">Il sonno buono <em>si sceglie</em>.</h1>
+        <p class="d-svela" style="--i:1">Materassi e cuscini prodotti in Italia, spediti gratis a casa tua in 48 ore. Se dopo 100 notti non ti convince, lo veniamo a riprendere.</p>
+        <div class="d-svela" style="--i:2;display:flex;gap:12px;flex-wrap:wrap">
+          <a class="d-pulsante dormi-btn--corallo" href="#negozio">Scopri i materassi</a>
+          <a class="d-pulsante" style="border-color:rgba(29,42,68,.2)" href="#configura">Configura il tuo</a>
+        </div>
+        <ul class="dormi-garanzie d-svela" style="--i:3" id="garanzie"><li>Spedizione gratuita</li><li>100 notti di prova</li><li>Pagamento sicuro</li><li>Reso gratuito</li></ul>
+      </div>
+      <div class="d-svela" style="--i:1"><img src="assets/img/foto-dormi-camera-480.webp" srcset="assets/img/foto-dormi-camera-480.webp 480w, assets/img/foto-dormi-camera-800.webp 800w" sizes="(min-width: 960px) 52vw, 92vw" width="480" height="317" alt="Camera da letto luminosa con letto matrimoniale e cuscini" loading="eager" decoding="async"></div>
+    </section>
+
+    <section class="d-sez" id="negozio" style="padding-top:20px">
+      <div class="d-cont">
+        <h2 class="d-svela" style="font-size:clamp(2rem,4vw,3.2rem);margin-bottom:30px">I più scelti</h2>
+        <div class="dormi-prodotti">
+          <article class="prodotto d-svela" data-prodotto="Nuvola" data-prezzo="649">
+            <div class="prodotto__vista"><div class="materasso"><i style="--s:0;background:#c9d6ea"></i><i style="--s:1;background:#e3eaf5"></i><i style="--s:2;background:#ffffff"></i></div></div>
+            <h3>Nuvola</h3><p>Memory a 3 strati, accoglie e sostiene. Per chi dorme di fianco.</p>
+            <div class="prodotto__prezzo"><b>649 €<s>799 €</s></b><button class="prodotto__aggiungi" type="button" aria-label="Aggiungi Nuvola al carrello">+</button></div>
+          </article>
+          <article class="prodotto d-svela" style="--i:1" data-prodotto="Bosco" data-prezzo="729">
+            <div class="prodotto__vista"><div class="materasso"><i style="--s:0;background:#d8c9a8"></i><i style="--s:1;background:#efe6cf"></i><i style="--s:2;background:#fbf7ec"></i></div></div>
+            <h3>Bosco</h3><p>Lattice naturale traspirante. Fresco d’estate, accogliente d’inverno.</p>
+            <div class="prodotto__prezzo"><b>729 €</b><button class="prodotto__aggiungi" type="button" aria-label="Aggiungi Bosco al carrello">+</button></div>
+          </article>
+          <article class="prodotto d-svela" style="--i:2" data-prodotto="Molla+" data-prezzo="579">
+            <div class="prodotto__vista"><div class="materasso"><i style="--s:0;background:#1d2a44"></i><i style="--s:1;background:#9fb0cf"></i><i style="--s:2;background:#f4f6fb"></i></div></div>
+            <h3>Molla+</h3><p>Molle insacchettate indipendenti, sostegno rigido per la schiena.</p>
+            <div class="prodotto__prezzo"><b>579 €</b><button class="prodotto__aggiungi" type="button" aria-label="Aggiungi Molla+ al carrello">+</button></div>
+          </article>
+          <article class="prodotto d-svela" style="--i:3" data-prodotto="Cuscino Piuma" data-prezzo="89">
+            <div class="prodotto__vista"><div class="cuscino"></div></div>
+            <h3>Cuscino Piuma</h3><p>Memory sagomato con fodera in cotone, lavabile in lavatrice.</p>
+            <div class="prodotto__prezzo"><b>89 €</b><button class="prodotto__aggiungi" type="button" aria-label="Aggiungi Cuscino Piuma al carrello">+</button></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="d-sez" id="configura" style="padding-top:0">
+      <div class="d-cont">
+        <div class="config d-svela" data-config>
+          <div class="config__vista" data-apri-strati title="Tocca per aprire gli strati">
+            <div class="materasso materasso--grande"><i style="--s:0;background:#c9d6ea"></i><i style="--s:1;background:#9fd0c9"></i><i style="--s:2;background:#e3eaf5"></i><i style="--s:3;background:#ffffff"></i></div>
+            <small>tocca il materasso per vedere gli strati</small>
+          </div>
+          <div>
+            <p style="color:#ff7a59;font-weight:700;margin-bottom:6px">Configuratore</p>
+            <h3>Nuvola su misura</h3>
+            <p style="color:#4d5a75">Scegli misura e rigidità: il prezzo si aggiorna subito.</p>
+            <div class="config__gruppo"><p>Misura</p>
+              <div class="config__scelte" data-gruppo="misura">
+                <button type="button" data-valore="80×190" data-prezzo="449">80×190</button>
+                <button type="button" data-valore="90×200" data-prezzo="499" aria-pressed="true">90×200</button>
+                <button type="button" data-valore="140×190" data-prezzo="599">140×190</button>
+                <button type="button" data-valore="160×200" data-prezzo="649">160×200</button>
+                <button type="button" data-valore="180×200" data-prezzo="719">180×200</button>
+              </div>
+            </div>
+            <div class="config__gruppo"><p>Rigidità</p>
+              <div class="config__scelte" data-gruppo="rigidita">
+                <button type="button" data-valore="Morbido" data-extra="0">Morbido</button>
+                <button type="button" data-valore="Medio" data-extra="0" aria-pressed="true">Medio</button>
+                <button type="button" data-valore="Rigido" data-extra="30">Rigido +30 €</button>
+              </div>
+            </div>
+            <p class="config__prezzo" data-prezzo-config>499 € <small>IVA inclusa · spedizione gratuita</small></p>
+            <button class="d-pulsante dormi-btn--corallo" type="button" data-aggiungi-config style="width:100%">Aggiungi al carrello</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="d-sez" style="padding-top:0">
+      <div class="d-cont" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px">
+        <div class="d-svela"><img src="assets/img/foto-dormi-letto-480.webp" srcset="assets/img/foto-dormi-letto-480.webp 480w, assets/img/foto-dormi-letto-800.webp 800w" sizes="(min-width: 900px) 46vw, 92vw" width="480" height="320" alt="Letto bianco in una stanza minimale piena di luce" loading="lazy" decoding="async"></div>
+        <div class="d-svela" style="--i:1"><img src="assets/img/foto-dormi-cuscini-480.webp" srcset="assets/img/foto-dormi-cuscini-480.webp 480w, assets/img/foto-dormi-cuscini-800.webp 800w" sizes="(min-width: 900px) 46vw, 92vw" width="480" height="320" alt="Cuscini e lenzuola bianche spiegazzate" loading="lazy" decoding="async"></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="velo" data-velo></div>
+  <aside class="cassetto" data-cassetto aria-label="Carrello" aria-hidden="true">
+    <div class="cassetto__testa"><h3>Il tuo carrello</h3><button class="cassetto__chiudi" type="button" data-chiudi-carrello aria-label="Chiudi il carrello">✕</button></div>
+    <div class="cassetto__voci" data-voci><p class="cassetto__vuoto">Il carrello è vuoto.</p></div>
+    <div class="cassetto__fondo">
+      <div class="cassetto__totale"><span>Totale</span><span data-totale>0 €</span></div>
+      <button class="d-pulsante dormi-btn" type="button" data-demo="pagamento">Vai al pagamento</button>
+    </div>
+  </aside>
+  <div class="demo-avviso" id="demo-avviso" role="status" hidden></div>
+  <script type="application/json" id="config">{"versione":"mur35vot","esempio":"materassi"}</script>
+</body>
+</html>

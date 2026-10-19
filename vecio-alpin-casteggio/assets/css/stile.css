@@ -1,0 +1,73 @@
+/* Osteria del Vecio Alpin · il verde della casetta di legno, crema, il rosso delle tovaglie a cuori. Caldo, alla buona.
+   Segno proprio: la facciata dello chalet divisa in due ante che si aprono in 3D e fanno vedere la sala. */
+:root { --fondo: #efe7cf; --carta: #f8f2df; --testo: #23301f; --tenue: #586351; --linea: #d6ccab; --accento: #3f5a3a; --sopra-accento: #f8f2df; --rosso: #b8322a;
+  --titoli: 'Bree Serif', Georgia, serif; --corpo: 'Work Sans', 'Segoe UI', sans-serif; --raggio: 4px; }
+h1 em, h2 em { font-style: normal; color: var(--rosso); }
+.sopra { color: var(--rosso); }
+.marchio img { height: 84px; clip-path: ellipse(48.5% 44% at 50% 44.5%); }
+@media (max-width: 900px) { .marchio img { height: 68px; } }
+.bottone { font-weight: 600; border-width: 2px; }
+.bottone.pieno:hover { background: var(--rosso); border-color: var(--rosso); }
+/* il bordo a quadretti delle tovaglie */
+.fascia-quadri, .tavola::before, .piede::before { content: ''; display: block; height: 16px; background: conic-gradient(var(--rosso) 25%, #fff 0 50%, var(--rosso) 0 75%, #fff 0) 0 0 / 16px 16px; }
+
+.apertura { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(20px, 4vw, 60px); align-items: center; max-width: var(--largo); margin: 0 auto; padding: clamp(28px, 5vw, 60px) var(--bordo) clamp(50px, 7vw, 96px); }
+.apertura .grande { margin-top: 1em; }
+.porta { position: relative; aspect-ratio: 4 / 3; perspective: 1600px; border-radius: 6px; box-shadow: 0 40px 60px -34px rgba(35, 48, 31, .8); }
+.porta-dentro { position: absolute; inset: 0; border-radius: 6px; overflow: hidden; box-shadow: inset 0 0 0 6px var(--accento); }
+.porta-dentro img { width: 100%; height: 100%; object-fit: cover; scale: calc(1.12 - var(--apri, 0) * .12); transition: scale 1.2s cubic-bezier(.2, .8, .2, 1); }
+.anta { position: absolute; top: 0; bottom: 0; width: 50%; background-image: var(--facciata); background-size: 200% 100%; backface-visibility: hidden; transition: transform 1.3s cubic-bezier(.3, .7, .2, 1), filter 1.3s; filter: brightness(calc(1 - var(--apri, 0) * .45)); }
+.anta.sinistra { left: 0; background-position: 0 0; transform-origin: 0 50%; transform: rotateY(calc(var(--apri, 0) * -104deg)); border-radius: 6px 0 0 6px; }
+.anta.destra { right: 0; background-position: 100% 0; transform-origin: 100% 50%; transform: rotateY(calc(var(--apri, 0) * 104deg)); border-radius: 0 6px 6px 0; }
+
+.tavola { padding-top: 0; }
+.tavola::before { margin: 0 calc(var(--bordo) * -1) clamp(50px, 8vw, 110px); }
+.tavola-testa { max-width: 60ch; margin-bottom: clamp(20px, 3vw, 40px); }
+.tavola-griglia { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(18px, 3vw, 40px); perspective: 1400px; }
+.tavola-griglia article { background: #fff; padding: 12px 12px 18px; box-shadow: 0 16px 30px -18px rgba(35, 48, 31, .6); rotate: var(--r); transition: rotate .4s, transform .5s cubic-bezier(.2, .8, .2, 1); }
+.tavola-griglia article:hover { rotate: 0deg; }
+.tavola-griglia img { width: 100%; aspect-ratio: 1; object-fit: cover; margin-bottom: 12px; }
+.tavola-griglia h3 { font-size: 1.3rem; }
+.tavola-griglia p { margin: 4px 0 0; color: var(--tenue); font-size: .97rem; }
+.tavola .nota { margin-top: 30px; max-width: 70ch; }
+
+.casetta { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(26px, 5vw, 70px); align-items: center; background: var(--accento); color: var(--sopra-accento); max-width: none; padding-inline: max(var(--bordo), calc((100vw - var(--largo)) / 2 + var(--bordo))); }
+.casetta .sopra, .casetta h2 em { color: #f3c55d; }
+.casetta .grande { color: #dbe3cf; }
+.casetta-foto { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; perspective: 1400px; }
+.casetta-foto img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 5; border-radius: 4px; }
+.casetta-foto .c { grid-column: 1 / -1; }
+.casetta-foto .c img { aspect-ratio: 16 / 9; }
+
+.contatti { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(26px, 5vw, 70px); align-items: start; }
+.orari-riquadro { background: var(--carta); border: 2px solid var(--accento); border-radius: 6px; padding: clamp(18px, 3vw, 32px); }
+.orari-riquadro .nota { margin: 12px 0 0; }
+.piede { background: var(--testo); color: #c3ccb6; border: 0; padding-top: 0; }
+.piede::before { margin: 0 calc(var(--bordo) * -1) 46px; }
+.piede-su b { color: var(--fondo); }
+.piede-giu { border-color: #3d4b37; }
+.piede a:hover { color: #f3c55d; }
+
+@media (max-width: 900px) {
+  .apertura, .casetta, .contatti { grid-template-columns: 1fr; }
+  .porta { order: -1; }
+  .tavola-griglia { grid-template-columns: 1fr 1fr; }
+}
+
+/* ---- versione a più pagine (14/10/2026) ---- */
+html { scrollbar-color: var(--accento) var(--fondo); }
+::selection { background: var(--accento); color: var(--sopra-accento); }
+.sopra:empty { display: none; }
+.pagina-interna h1 { font-size: clamp(2.5rem, 5.6vw, 4.6rem); }/* i cartelli di legno, come sui sentieri */
+.cartelli { position: relative; max-width: 760px; margin: 0 auto; padding: clamp(30px, 5vw, 60px) var(--bordo) clamp(40px, 6vw, 80px); display: grid; gap: clamp(14px, 2vw, 22px); }
+.cartelli .palo { position: absolute; left: 50%; top: 0; bottom: 0; width: 18px; translate: -50% 0; background: linear-gradient(90deg, #4a3220, #6f4c2f 45%, #3d2817); border-radius: 4px; }
+.cartelli a { position: relative; display: grid; gap: 2px; width: min(82%, 520px); padding: 18px 34px; text-decoration: none; color: #f8f2df; background: linear-gradient(#4b6a45, #3a5335); background-image: repeating-linear-gradient(2deg, rgba(0, 0, 0, .07) 0 2px, transparent 2px 9px), linear-gradient(#4b6a45, #3a5335); box-shadow: 0 14px 22px -14px rgba(35, 48, 31, .8); transition: translate .5s cubic-bezier(.16, 1, .3, 1), rotate .5s cubic-bezier(.16, 1, .3, 1); }
+.cartelli .destra { justify-self: end; clip-path: polygon(0 0, calc(100% - 26px) 0, 100% 50%, calc(100% - 26px) 100%, 0 100%); rotate: -1.5deg; }
+.cartelli .sinistra { justify-self: start; text-align: right; clip-path: polygon(26px 0, 100% 0, 100% 100%, 26px 100%, 0 50%); rotate: 1.5deg; }
+.cartelli b { font: 400 clamp(1.7rem, 3.4vw, 2.5rem) / 1.05 var(--titoli); }
+.cartelli span { color: #dbe3cf; font-size: .98rem; }
+.cartelli .destra:hover, .cartelli .destra:focus-visible { translate: 12px 0; rotate: 0deg; }
+.cartelli .sinistra:hover, .cartelli .sinistra:focus-visible { translate: -12px 0; rotate: 0deg; }
+.due-righe { text-align: center; }
+.due-righe .aperto { justify-content: center; }
+.casetta h1 em { color: #f3c55d; }

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="it" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pulse Gym – sito dimostrativo di Local Web Agency</title>
+  <meta name="description" content="Sito dimostrativo (attività inventata) realizzato da Local Web Agency: esempio di sito con prenotazioni per palestra.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#0d0d0d">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/esempi-sito.css?v=mur35vot">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="assets/js/dist/esempi.js?v=mur35vot" defer></script>
+</head>
+<body class="demo demo--palestra">
+  <div class="demo-barra" role="note">
+    <a class="demo-barra__torna" href="esempi.html" aria-label="Torna agli esempi di Local Web Agency">←</a>
+    <p><strong>Sito dimostrativo</strong> · <span class="demo-barra__lungo">Pulse Gym è un’attività inventata: questo sito l’abbiamo creato noi per mostrarti un sito con prenotazioni.</span><span class="demo-barra__corto">attività inventata</span></p>
+    <a class="demo-barra__cta" href="consulenza.html#modulo">Ne voglio uno così</a>
+  </div>
+<header class="d-testata">
+    <div class="d-cont d-testata__int">
+      <a class="d-logo pulse-logo" href="#inizio"><i></i>PULSE</a>
+      <nav class="d-nav" aria-label="Menu"><a href="#corsi">Corsi</a><a href="#abbonamenti">Abbonamenti</a><a href="#palestra">La palestra</a></nav>
+      <button class="d-pulsante pulse-btn--linea" type="button" data-demo="accesso">Area iscritti</button>
+    </div>
+  </header>
+  <main id="inizio">
+    <section class="d-cont pulse-hero">
+      <div>
+        <h1 class="d-svela">Allenati.<span>Senza scuse.</span></h1>
+        <p class="d-svela" style="--i:1">Sala pesi, 30 corsi a settimana e coach veri. Prenoti la lezione dal telefono, vedi i posti liberi in tempo reale e ti alleni quando vuoi tu.</p>
+        <div class="d-svela" style="--i:2;display:flex;gap:12px;flex-wrap:wrap">
+          <a class="d-pulsante pulse-btn" href="#corsi">Prenota una lezione</a>
+          <button class="d-pulsante pulse-btn--linea" type="button" data-demo="prova">Prova gratuita di 7 giorni</button>
+        </div>
+      </div>
+      <div class="pulse-hero__foto d-svela" style="--i:1"><img src="assets/img/foto-pulse-sala-480.webp" srcset="assets/img/foto-pulse-sala-480.webp 480w, assets/img/foto-pulse-sala-800.webp 800w" sizes="(min-width: 900px) 42vw, 92vw" width="480" height="320" alt="Sala attrezzi luminosa con bilancieri e bike" loading="eager" decoding="async"></div>
+    </section>
+
+    <section class="d-sez" id="corsi">
+      <div class="d-cont">
+        <h2 class="d-svela" style="font-size:clamp(2.4rem,6vw,4.6rem);margin-bottom:24px">Corsi <span style="color:#ff5a1f">della settimana</span></h2>
+        <div class="pulse-giorni" role="tablist" data-giorni-corsi></div>
+        <div class="pulse-corsi" data-corsi aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="d-sez" id="abbonamenti" style="padding-top:0">
+      <div class="d-cont">
+        <h2 class="d-svela" style="font-size:clamp(2.4rem,6vw,4.6rem);margin-bottom:30px">Abbonamenti</h2>
+        <div class="pulse-abbonamenti">
+          <div class="abbonamento d-svela"><h3>Mensile</h3><b>49€<small>/mese</small></b><ul><li>Sala pesi illimitata</li><li>2 corsi a settimana</li><li>App con le schede</li></ul><button class="d-pulsante" type="button" data-demo="abbonamento">Scegli</button></div>
+          <div class="abbonamento abbonamento--top d-svela" style="--i:1"><h3>Trimestrale</h3><b>129€<small>/3 mesi</small></b><ul><li>Sala pesi illimitata</li><li>Corsi illimitati</li><li>1 consulenza con il coach</li></ul><button class="d-pulsante" type="button" data-demo="abbonamento">Scegli</button></div>
+          <div class="abbonamento d-svela" style="--i:2"><h3>Annuale</h3><b>399€<small>/anno</small></b><ul><li>Tutto incluso</li><li>Scheda personalizzata</li><li>2 mesi di sospensione</li></ul><button class="d-pulsante" type="button" data-demo="abbonamento">Scegli</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="d-sez" id="palestra" style="padding-top:0">
+      <div class="d-cont pulse-foto2">
+        <div class="d-svela"><img src="assets/img/foto-pulse-corde-480.webp" srcset="assets/img/foto-pulse-corde-480.webp 480w, assets/img/foto-pulse-corde-800.webp 800w" sizes="(min-width: 900px) 46vw, 92vw" width="480" height="271" alt="Atleta che si allena con le corde" loading="lazy" decoding="async"></div>
+        <div class="d-svela" style="--i:1"><img src="assets/img/foto-pulse-bilanciere-480.webp" srcset="assets/img/foto-pulse-bilanciere-480.webp 480w, assets/img/foto-pulse-bilanciere-800.webp 800w" sizes="(min-width: 900px) 46vw, 92vw" width="480" height="320" alt="Primo piano di un disco su un bilanciere" loading="lazy" decoding="async"></div>
+      </div>
+    </section>
+  </main>
+  <div class="demo-avviso" id="demo-avviso" role="status" hidden></div>
+  <script type="application/json" id="config">{"versione":"mur35vot","esempio":"palestra"}</script>
+</body>
+</html>

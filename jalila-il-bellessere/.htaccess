@@ -1,0 +1,45 @@
+# Jalila Il Bellessere - generato da strumenti/genera.js (solo caratteri ASCII)
+# Nessun reindirizzamento di dominio o di protocollo: il sito funziona su qualsiasi dominio,
+# compreso quello temporaneo di Hostinger. L'HTTPS si attiva dal pannello.
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+AddDefaultCharset UTF-8
+AddType image/webp .webp
+AddType video/mp4 .mp4
+AddType font/woff2 .woff2
+AddType application/manifest+json .webmanifest
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+RewriteRule ^index\.html$ / [L,R=301]
+# Indirizzi del vecchio sito WordPress -> nuove pagine
+RewriteRule ^(metodo-jalila-lp|metodo|metodo-jalila)/?$ /metodo-ner.html [L,R=301]
+RewriteRule ^(contatti|contattaci|dove-siamo)/?$ /contatti.html [L,R=301]
+RewriteRule ^(privacy-policy|privacy)/?$ /privacy-policy.html [L,R=301]
+RewriteRule ^(cookie-policy|cookie)/?$ /cookie-policy.html [L,R=301]
+RewriteRule ^(feed|comments/feed|wp-json|wp-login\.php|wp-admin|xmlrpc\.php)(/.*)?$ / [L,R=301]
+</IfModule>
+
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+# CSS, JS e video hanno la versione nell'indirizzo (?v=...): si possono tenere a lungo
+<FilesMatch "\.(css|js|woff2|mp4)$">
+Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
+# Le immagini possono essere sostituite con lo stesso nome: cache breve
+<FilesMatch "\.(webp|png|jpg|svg|ico)$">
+Header set Cache-Control "public, max-age=604800"
+</FilesMatch>
+<FilesMatch "\.(html)$">
+Header set Cache-Control "public, max-age=600"
+</FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml application/manifest+json
+</IfModule>

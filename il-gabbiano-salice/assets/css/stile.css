@@ -1,0 +1,99 @@
+/* Il Gabbiano · sabbia, blu mare e terracotta: «terra & mare» è la loro cucina e diventa la forma del sito.
+   Segno proprio: l'apertura divisa in due da una linea che si sposta; i piatti si girano quando si cambia lato. */
+:root { --fondo: #f6efe2; --carta: #fffaf0; --testo: #16283a; --tenue: #586778; --linea: #e2d7c2; --mare: #0f4c81; --terra: #b8492f; --accento: #0f4c81; --sopra-accento: #fff;
+  --titoli: 'Libre Caslon Display', Georgia, serif; --corpo: 'Karla', 'Segoe UI', sans-serif; --raggio: 6px; }
+h1 { font-size: clamp(3.6rem, 9vw, 8rem); letter-spacing: -.02em; }
+h1 em { font-style: italic; color: var(--terra); }
+h2 em { font-style: italic; color: var(--mare); }
+.marchio img { height: 50px; mix-blend-mode: multiply; }
+.bottone { font-weight: 700; }
+.bottone.pieno:hover { background: var(--terra); border-color: var(--terra); }
+
+.apertura { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(20px, 4vw, 60px); align-items: center; max-width: var(--largo); margin: 0 auto; padding: clamp(28px, 4.5vw, 60px) var(--bordo) clamp(50px, 7vw, 96px); }
+.apertura .grande { margin-top: 1em; }
+.diviso { position: relative; aspect-ratio: 5 / 4; border-radius: 10px; overflow: hidden; box-shadow: 0 40px 70px -40px rgba(22, 40, 58, .7); user-select: none; }
+.lato { position: absolute; inset: 0; }
+.lato img { width: 100%; height: 100%; object-fit: cover; }
+.lato.mare { clip-path: polygon(0 0, calc(var(--taglio) + 4%) 0, calc(var(--taglio) - 4%) 100%, 0 100%); }
+.lato figcaption { position: absolute; bottom: 18px; font: italic 400 clamp(1.8rem, 3.4vw, 3rem) var(--titoli); color: #fff; text-shadow: 0 2px 18px rgba(0, 0, 0, .6); }
+.lato.mare figcaption { left: 22px; } .lato.terra figcaption { right: 22px; }
+.manico { position: absolute; top: -10%; bottom: -10%; left: var(--taglio); width: 4px; margin-left: -2px; background: #fff; rotate: 4.6deg; box-shadow: 0 0 20px rgba(0, 0, 0, .4); pointer-events: none; }
+.manico i { position: absolute; left: 50%; top: 50%; width: 50px; height: 50px; margin: -25px; border-radius: 50%; background: #fff; box-shadow: 0 6px 18px rgba(0, 0, 0, .35); rotate: -4.6deg; }
+.manico i::before, .manico i::after { content: ''; position: absolute; top: 50%; width: 9px; height: 9px; border: solid var(--testo); border-width: 2px 2px 0 0; margin-top: -5px; }
+.manico i::before { left: 12px; rotate: -135deg; } .manico i::after { right: 12px; rotate: 45deg; }
+.diviso input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; }
+.volo { position: absolute; top: 9%; left: -14%; width: 12%; fill: #fff; filter: drop-shadow(0 4px 8px rgba(0, 0, 0, .35)); animation: plana 14s linear infinite; pointer-events: none; }
+@keyframes plana { 0% { translate: 0 0; } 50% { translate: 520% 26%; } 100% { translate: 1080% -10%; } }
+
+.piatti { --accento: var(--mare); }
+.piatti[data-lato="Terra"] { --accento: var(--terra); }
+.piatti-testa { display: flex; flex-wrap: wrap; gap: 20px; align-items: end; justify-content: space-between; margin-bottom: clamp(20px, 3vw, 40px); }
+.piatti-testa h2 { margin: 0; }
+.scambio { display: inline-flex; border: 2px solid var(--testo); border-radius: 999px; padding: 4px; background: var(--carta); }
+.scambio button { font: 700 1.05rem var(--corpo); padding: 10px 30px; border: 0; border-radius: 999px; background: none; color: var(--testo); cursor: pointer; transition: background-color .3s, color .3s; }
+.scambio button[aria-pressed="true"] { background: var(--accento); color: #fff; }
+.piatti-griglia { display: none; grid-template-columns: repeat(3, 1fr); gap: clamp(14px, 2.4vw, 30px); perspective: 1400px; }
+.piatti[data-lato="Mare"] [data-griglia="Mare"], .piatti[data-lato="Terra"] [data-griglia="Terra"] { display: grid; }
+.piatti-griglia article { animation: gira .7s cubic-bezier(.2, .8, .2, 1) both; animation-delay: calc(var(--i) * 70ms); transform-origin: 50% 50%; }
+@keyframes gira { from { opacity: 0; transform: rotateY(-80deg) translateZ(-60px); } }
+.piatti-griglia img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; margin-bottom: 14px; }
+.piatti-griglia h3 { color: var(--accento); margin-bottom: 4px; transition: color .4s; }
+.piatti-griglia p { color: var(--tenue); margin: 0; }
+.piatti .nota { margin-top: 26px; max-width: 70ch; }
+
+.pasta { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(26px, 5vw, 70px); align-items: center; border-top: 1px solid var(--linea); }
+.pasta-foto { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; perspective: 1400px; }
+.pasta-foto figure:nth-child(2) { margin-top: 40px; }
+.pasta-foto img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 10px; }
+
+.pizza { padding-top: 0; }
+.pizza-forno { position: relative; border-radius: 12px; overflow: hidden; background: #150b06; }
+.pizza-forno > img { width: 100%; aspect-ratio: 16 / 7; object-fit: cover; opacity: .82; }
+.pizza-forno figcaption { position: absolute; left: clamp(18px, 4vw, 60px); top: 50%; translate: 0 -50%; max-width: 30ch; color: #fff; }
+.pizza-forno .sopra { color: #f6c98a; }
+.pizza-forno .bottone { --accento: #f6efe2; --sopra-accento: #16283a; margin-top: .4em; }
+.pizza-fila { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: -60px clamp(14px, 4vw, 60px) 0; position: relative; perspective: 1400px; }
+.pizza-fila img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 50%; box-shadow: 0 0 0 7px var(--fondo), 0 26px 40px -18px rgba(22, 40, 58, .6); }
+
+.contatti { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(26px, 5vw, 70px); align-items: start; border-top: 1px solid var(--linea); }
+.orari-riquadro { background: var(--carta); border: 1px solid var(--linea); border-radius: 12px; padding: clamp(18px, 3vw, 32px); }
+.piede { background: var(--mare); color: rgba(255, 255, 255, .82); border: 0; }
+.piede-su b { color: #fff; font-style: italic; }
+.piede-giu { border-color: rgba(255, 255, 255, .22); }
+.piede a:hover { color: #f6c98a; }
+
+@media (max-width: 900px) {
+  .apertura, .pasta, .contatti { grid-template-columns: 1fr; }
+  .diviso { order: -1; aspect-ratio: 1; }
+  .piatti-griglia { grid-template-columns: 1fr 1fr; }
+  .pizza-forno > img { aspect-ratio: 4 / 5; }
+  .pizza-fila { margin-top: -30px; gap: 8px; }
+}
+.marchio svg { width: 46px; fill: var(--terra); }
+.marchio-nome { font: 400 2rem 'Kaushan Script', cursive; color: var(--mare); }
+.locale { grid-column: 1 / -1; display: grid; grid-template-columns: 1.6fr 1fr; gap: 14px; perspective: 1400px; }
+.locale img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; aspect-ratio: 2 / 1; }
+.locale figure:last-child img { aspect-ratio: 5 / 4; }
+@media (max-width: 900px) { .locale { grid-template-columns: 1fr; } }
+
+/* ---- versione a più pagine (14/10/2026) ---- */
+html { scrollbar-color: var(--accento) var(--fondo); }
+::selection { background: var(--accento); color: var(--sopra-accento); }
+.sopra:empty { display: none; }
+.porte { display: grid; grid-template-columns: repeat(3, 1fr); }
+.porte a { position: relative; display: block; overflow: hidden; text-decoration: none; color: #fff; }
+.porte img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; transition: scale 1.2s cubic-bezier(.16, 1, .3, 1), filter .6s; filter: brightness(.82); }
+.porte a:hover img, .porte a:focus-visible img { scale: 1.06; filter: brightness(1); }
+.porte span { position: absolute; left: 0; right: 0; bottom: 0; padding: clamp(40px, 6vw, 90px) clamp(16px, 3vw, 40px) clamp(18px, 3vw, 36px); background: linear-gradient(transparent, rgba(8, 20, 34, .88)); font-size: 1rem; }
+.porte b { display: block; font: 400 clamp(1.9rem, 3.6vw, 3.2rem) / 1 var(--titoli); margin-bottom: .2em; }
+.stasera { text-align: center; }
+.stasera .grande { margin: 0 auto 1em; max-width: 56ch; }
+.stasera .azioni { justify-content: center; }
+.stasera .aperto { justify-content: center; }
+.piatti-testa h1, .contatti h1, .pizza-forno h1 { font-size: clamp(2.6rem, 6vw, 5rem); }
+.mosse { list-style: none; padding: 0; margin: clamp(20px, 3vw, 40px) 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 3vw, 40px); counter-reset: m; }
+.mosse li { counter-increment: m; border-top: 2px solid var(--accento); padding-top: 14px; color: var(--tenue); }
+.mosse li::before { content: counter(m); font: 400 3rem / 1 var(--titoli); color: var(--accento); display: block; margin-bottom: 6px; }
+.mosse b { display: block; font: 400 1.6rem var(--titoli); color: var(--testo); margin-bottom: 4px; }
+@media (max-width: 900px) { .porte, .mosse { grid-template-columns: 1fr; } .porte img { aspect-ratio: 16 / 10; } }
+.pizza-forno h1 em { color: #ffd39a; }
